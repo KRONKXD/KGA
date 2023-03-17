@@ -19,7 +19,7 @@ public class turret : MonoBehaviour
     public Transform partToRotate;
     public float turnSpeed = 10f;
 
-    public GameObject bulletPrefab;
+    public Bullet bulletPrefab;
     public Transform firePoint;
     
     // Start is called before the first frame update
@@ -65,13 +65,13 @@ public class turret : MonoBehaviour
         //Vector3 rotation = lookRotation.eulerAngles;
         //partToRotate.rotation = Quaternion.Euler(0f, 0f, rotation.z);
 
-        // is neto fixas ant 2d
+        //is neto fixas ant 2d
         Vector3 dir = target.position - transform.position;
-        Vector3 rotatedVectorDir = Quaternion.Euler(0, 0, 0) * dir;
+        Vector3 rotatedVectorDir = Quaternion.Euler(0, 0, 90) * dir;
         //(You might have to adjust the rotation to point in the right direction, it worked at 180 for me)
         Quaternion lookRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorDir);
-        Quaternion rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed);
-        partToRotate.rotation = rotation;
+        //Quaternion rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed);
+        partToRotate.rotation = lookRotation;
 
         if (fireCountdown <= 0f)
         {
@@ -84,13 +84,13 @@ public class turret : MonoBehaviour
 
     void Shoot()
     {
-        GameObject buleltGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bullet = buleltGO.GetComponent<Bullet>();
-
-        if (bullet != null) 
-        {
-            bullet.Seek(target);
-        }
+        //GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        //Bullet bullet = bulletGO.GetComponent<Bullet>();
+        //if (bullet != null) 
+        //{
+        //    //bullet.Seek(target);
+        //}
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 
     // Kad nupiestu per Gizmo range tureto kai ant jo paspaudi

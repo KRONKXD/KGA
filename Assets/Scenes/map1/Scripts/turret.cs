@@ -94,9 +94,9 @@ public class turret : MonoBehaviour
     }
 
     // Kad nupiestu per Gizmo range tureto kai ant jo paspaudi
-    // void OnDrawGizmo() jei nori kad visada rodytu
-    // void OnDrawGizmoSelected() jei nori kad tik pasirinkus rodytu
-    void OnDrawGizmo()
+    // void OnDrawGizmos() jei nori kad visada rodytu
+    // void OnDrawGizmosSelected() jei nori kad tik pasirinkus rodytu
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);

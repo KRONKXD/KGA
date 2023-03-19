@@ -45,6 +45,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: 110fe4b2287c57240a61f24e46ea078a, type: 3}
+    - {fileID: 2800000, guid: 47744446a99d8c94e96063520b05854b, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -92,6 +93,10 @@ SpriteAtlas:
   - {fileID: -574765554, guid: 110fe4b2287c57240a61f24e46ea078a, type: 3}
   - {fileID: -1757880642, guid: 110fe4b2287c57240a61f24e46ea078a, type: 3}
   - {fileID: -2011087105, guid: 110fe4b2287c57240a61f24e46ea078a, type: 3}
+  - {fileID: 1594766526, guid: 47744446a99d8c94e96063520b05854b, type: 3}
+  - {fileID: -740337039, guid: 47744446a99d8c94e96063520b05854b, type: 3}
+  - {fileID: -1328438966, guid: 47744446a99d8c94e96063520b05854b, type: 3}
+  - {fileID: 2111568185, guid: 47744446a99d8c94e96063520b05854b, type: 3}
   m_PackedSpriteNamesToIndex:
   - ground_tilemap_128 1_30
   - ground_tilemap_128 1_31
@@ -135,6 +140,10 @@ SpriteAtlas:
   - ground_tilemap_128 1_28
   - ground_tilemap_128 1_18
   - ground_tilemap_128 1_19
+  - ground_decor_1
+  - ground_decor_0
+  - ground_decor_3
+  - ground_decor_2
   m_RenderDataMap: {}
   m_Tag: SpriteAtlas
   m_IsVariant: 0

@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     private Transform target;
     private int waypointIndex = 0;
     public int maxHealth = 100;
-    public int currentHealth;
+    private int currentHealth;
     public HealthBar healthBar;
 
 

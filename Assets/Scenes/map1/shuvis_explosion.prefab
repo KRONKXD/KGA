@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2399782344454492020}
   - component: {fileID: 7983821764064663331}
   m_Layer: 0
-  m_Name: burtas_shuvis
+  m_Name: shuvis_explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 232016691, guid: da8756a22e41d0d419cf9ff551693398, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.23974913, g: 0.90588236, b: 0.082352914, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87191523189736c438822493d29ba321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  explosiveRange: 0
+  speed: 15
+  explosiveRange: 1
   impactEffect: {fileID: 5121981613295269313, guid: 218d2297ccc26034e82276a39d5e988a, type: 3}
 --- !u!58 &-2399782344454492020
 CircleCollider2D:

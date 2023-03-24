@@ -46,11 +46,15 @@ SpriteAtlas:
     packables:
     - {fileID: 2800000, guid: 110fe4b2287c57240a61f24e46ea078a, type: 3}
     - {fileID: 2800000, guid: 47744446a99d8c94e96063520b05854b, type: 3}
+    - {fileID: 2800000, guid: 8a49dc735cc36ed4fb28d8a86b982c86, type: 3}
+    - {fileID: 2800000, guid: da8756a22e41d0d419cf9ff551693398, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 232016691, guid: da8756a22e41d0d419cf9ff551693398, type: 3}
+  - {fileID: -688877436, guid: da8756a22e41d0d419cf9ff551693398, type: 3}
   - {fileID: -1700776787, guid: 110fe4b2287c57240a61f24e46ea078a, type: 3}
   - {fileID: 639229595, guid: 110fe4b2287c57240a61f24e46ea078a, type: 3}
   - {fileID: 1244191862, guid: 110fe4b2287c57240a61f24e46ea078a, type: 3}
@@ -93,11 +97,15 @@ SpriteAtlas:
   - {fileID: -574765554, guid: 110fe4b2287c57240a61f24e46ea078a, type: 3}
   - {fileID: -1757880642, guid: 110fe4b2287c57240a61f24e46ea078a, type: 3}
   - {fileID: -2011087105, guid: 110fe4b2287c57240a61f24e46ea078a, type: 3}
+  - {fileID: -341498086, guid: 8a49dc735cc36ed4fb28d8a86b982c86, type: 3}
+  - {fileID: -1029962245, guid: 8a49dc735cc36ed4fb28d8a86b982c86, type: 3}
   - {fileID: 1594766526, guid: 47744446a99d8c94e96063520b05854b, type: 3}
   - {fileID: -740337039, guid: 47744446a99d8c94e96063520b05854b, type: 3}
   - {fileID: -1328438966, guid: 47744446a99d8c94e96063520b05854b, type: 3}
   - {fileID: 2111568185, guid: 47744446a99d8c94e96063520b05854b, type: 3}
   m_PackedSpriteNamesToIndex:
+  - bokstas_burtas_1
+  - bokstas_burtas_0
   - ground_tilemap_128 1_30
   - ground_tilemap_128 1_31
   - ground_tilemap_128 1_32
@@ -140,6 +148,8 @@ SpriteAtlas:
   - ground_tilemap_128 1_28
   - ground_tilemap_128 1_18
   - ground_tilemap_128 1_19
+  - bokstas_bomba_1
+  - bokstas_bomba_0
   - ground_decor_1
   - ground_decor_0
   - ground_decor_3

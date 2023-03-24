@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2399782344454492020}
   - component: {fileID: 7983821764064663331}
   m_Layer: 0
-  m_Name: burtas_shuvis
+  m_Name: bullet_wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2399782344454492020}
   - component: {fileID: 7983821764064663331}
   m_Layer: 0
-  m_Name: shuvis_explosion
+  m_Name: bullet_bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 232016691, guid: da8756a22e41d0d419cf9ff551693398, type: 3}
-  m_Color: {r: 0.23974913, g: 0.90588236, b: 0.082352914, a: 1}
+  m_Sprite: {fileID: -341498086, guid: 8a49dc735cc36ed4fb28d8a86b982c86, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  explosiveRange: 1
+  explosiveRange: 0.5
   impactEffect: {fileID: 5121981613295269313, guid: 218d2297ccc26034e82276a39d5e988a, type: 3}
 --- !u!58 &-2399782344454492020
 CircleCollider2D:
@@ -115,9 +115,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: -0.03}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.17
+  m_Radius: 0.23
 --- !u!50 &7983821764064663331
 Rigidbody2D:
   serializedVersion: 4

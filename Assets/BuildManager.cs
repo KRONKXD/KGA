@@ -19,11 +19,17 @@ public class BuildManager : MonoBehaviour
         towerToBuild = standartTowerPrefab;
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
+    // Update is called once per frame
+    void Update()
+    {
+        if (buildMode)
+        {
+            Vector3 mousePos = Input.mousePosition;
+            Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+            worldPos.y += (float)(8 * 0.0625);
+            transform.position = worldPos;
+        }
+    }
 
     private void Awake()
     {

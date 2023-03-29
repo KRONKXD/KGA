@@ -19,6 +19,9 @@ public class UI_script : MonoBehaviour
 
         PausedMenu pausedMenu = paused_Menu.GetComponent<PausedMenu>();
         buttonPause.clicked += () => pausedMenu.Pause();
+
+        Button buttonBuy1 = root.Q<Button>("buy1");
+        buttonBuy1.clicked += () => BuildManager.buildMode = true;
     }
     // Update is called once per frame
     void Update()

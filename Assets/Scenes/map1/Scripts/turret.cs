@@ -101,4 +101,9 @@ public class turret : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
+    private void OnMouseDown()
+    {
+        Debug.Log("ant manes paspaude ");
+    }
 }

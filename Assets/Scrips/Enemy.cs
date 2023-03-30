@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 10f;
+    public int bounty = 60;
 
     private Transform target;
     private int waypointIndex = 0;
@@ -28,10 +29,15 @@ public class Enemy : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+        if (Vector3.Distance(transform.position, target.position) <= 0.1f)
         {
             GetNextWaypoint();
         }
+    }
+
+    private void OnDestroy()
+    {
+        MoneyManager.CurrentMoney += bounty;
     }
 
     void GetNextWaypoint()

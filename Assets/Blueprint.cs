@@ -20,9 +20,16 @@ public class Blueprint : MonoBehaviour
     {
         if(BuildManager.buildMode)
         {
+            newSprite = BuildManager.instance.GetTowerToBuild().GetComponentInChildren<SpriteRenderer>().sprite;
+            this.GetComponent<SpriteRenderer>().sprite = newSprite;
             tempColor.a = 0.5f;
             this.GetComponent<SpriteRenderer>().color = tempColor;
             transform.position = BuildManager.instance.gameObject.transform.position;
+        }
+        else
+        {
+            tempColor.a = 0;
+            this.GetComponent<SpriteRenderer>().color = tempColor;
         }
     }
 

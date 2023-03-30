@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Buildable : MonoBehaviour
 {
     //public Color hoverColor;
-
-    private GameObject tower;
-
     //private Renderer rend;
     //private Color startColor;
 
@@ -38,18 +36,19 @@ public class Buildable : MonoBehaviour
     {
         if (BuildManager.buildMode)
         {
-            Vector3 mousePos = Input.mousePosition;
-            //mousePos.z = Camera.main.nearClipPlane;
-            mousePos.z = 0;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-            worldPos.y += (float)(8 * 0.0625);
-            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(worldPos, 0f);
-            Debug.Log(hitColliders.Length);
+            //Vector3 mousePos = Input.mousePosition;
+            ////mousePos.z = Camera.main.nearClipPlane;
+            //mousePos.z = 0;
+            //Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+            //worldPos.y += (float)(8 * 0.0625);
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(BuildManager.worldPos, 0f);
+            //Debug.Log(hitColliders.Length);
             if (hitColliders.Length < 2)
             {
                 GameObject towerToBuild = BuildManager.instance.GetTowerToBuild();
-                tower = (GameObject)Instantiate(towerToBuild, worldPos, transform.rotation);
+                Instantiate(towerToBuild, BuildManager.worldPos, transform.rotation);
                 BuildManager.buildMode = false;
+                MoneyManager.CurrentMoney -= towerToBuild.GetComponent<turret>().GetTowerPrice();
             }
         }
         

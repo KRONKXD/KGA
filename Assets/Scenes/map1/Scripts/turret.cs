@@ -6,11 +6,13 @@ using UnityEngine;
 public class turret : MonoBehaviour
 {
     private Transform target;
+    private turret instance;
 
     [Header("Attributes")]
 
     public float range = 15f;
     public float fireRate = 1f;
+    public int price = 100;
     private float fireCountdown = 0f;
 
     [Header("Unity Setup Fields")]
@@ -102,8 +104,19 @@ public class turret : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
-    private void OnMouseDown()
+    //private void OnMouseDown()
+    //{
+    //    if ( BuildManager.demoMode)
+    //    {
+    //        Debug.Log("Sold!");
+    //        MoneyManager.CurrentMoney += price / 2;
+    //        Destroy(gameObject);
+    //    }
+    //}
+
+
+    public int GetTowerPrice()
     {
-        Debug.Log("ant manes paspaude ");
+        return price;
     }
 }

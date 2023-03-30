@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 5439795425235910617}
   m_Layer: 0
   m_Name: Tower_bomb
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 4
   fireRate: 0.7
+  price: 200
   enemyTag: Enemy
   partToRotate: {fileID: 6891754641232160542}
   turnSpeed: 1000

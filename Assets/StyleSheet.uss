@@ -15,16 +15,22 @@
     border-bottom-left-radius: 2px;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
-    color: rgba(255, 255, 255, 255);
+    color: rgb(255, 255, 255);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .storeWindow {
-    width: auto;
-    height: auto;
-    border-left-color: rgb(99, 64, 47);
-    border-right-color: rgb(99, 64, 47);
-    border-top-color: rgb(99, 64, 47);
-    border-bottom-color: rgb(99, 64, 47);
+    border-left-color: rgb(62, 61, 76);
+    border-right-color: rgb(62, 61, 76);
+    border-top-color: rgb(62, 61, 76);
+    border-bottom-color: rgb(62, 61, 76);
     border-left-width: 5px;
     border-right-width: 5px;
     border-top-width: 5px;
@@ -41,5 +47,5 @@
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-    align-items: auto;
+    background-color: rgb(54, 49, 84);
 }

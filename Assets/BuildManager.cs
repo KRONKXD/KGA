@@ -36,6 +36,10 @@ public class BuildManager : MonoBehaviour
             ToPixels();
             //Debug.Log("esama worldPos " + worldPos + "apskaiciuotas xPix " + xPix + " apskaiciuota xCoord" + xCoord);
             transform.position = worldPos;
+            if (Input.GetMouseButton(1))
+            {
+                buildMode = false;
+            }
         }
         if (demoMode)
         {
@@ -57,7 +61,11 @@ public class BuildManager : MonoBehaviour
                         Destroy(a.gameObject);
                     }
                 }
-            } 
+            }
+            if (Input.GetMouseButton(1))
+            {
+                demoMode = false;
+            }
         }
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.iOS;
@@ -18,6 +19,7 @@ public class UI_script : MonoBehaviour
     private int price1Tower;
     private int price2Tower;
     private int storedMoney;
+    private bool demoMode;
     //private VisualElement root;
     private void OnEnable()
     {
@@ -30,7 +32,10 @@ public class UI_script : MonoBehaviour
         Button buttonBuy1 = root.Q<Button>("buy1");
         buttonBuy1.clicked += () =>
         {
-
+            if (BuildManager.demoMode)
+            {
+                ToggleDemolishMode();
+            }
             if (MoneyManager.CurrentMoney >= price1Tower)
             {
                 BuildManager.instance.SetTowerToBuild(buy1_Tower);
@@ -39,12 +44,16 @@ public class UI_script : MonoBehaviour
             else
             {
                 Debug.Log("u broke lol");
-            }
+            } 
         };
 
         Button buttonBuy2 = root.Q<Button>("buy2");
         buttonBuy2.clicked += () =>
         {
+            if (BuildManager.demoMode)
+            {
+                ToggleDemolishMode();
+            }
             if (MoneyManager.CurrentMoney >= price2Tower)
             {
                 BuildManager.instance.SetTowerToBuild(buy2_Tower);
@@ -71,8 +80,9 @@ public class UI_script : MonoBehaviour
         price2Tower = buy2_Tower.GetComponent<turret>().GetTowerPrice();
         UpdateMoney(0);
         root = GetComponent<UIDocument>().rootVisualElement;
-        root.Q<Label>("price1").text = price1Tower + " $";
-        root.Q<Label>("price2").text = price2Tower + " $";
+        root.Q<Label>("price1").text = price1Tower + " G";
+        root.Q<Label>("price2").text = price2Tower + " G";
+        demoMode = false;
     }
 
     private void UpdateMoney(int change)
@@ -81,7 +91,7 @@ public class UI_script : MonoBehaviour
         Label moneyLabel = root.Q<Label>("money");
         MoneyManager.CurrentMoney -= change;
         storedMoney = MoneyManager.CurrentMoney;
-        moneyLabel.text = moneyLabel.text.Substring(0, 7) + MoneyManager.CurrentMoney + " $";
+        moneyLabel.text = moneyLabel.text.Substring(0, 2) + MoneyManager.CurrentMoney;
     }
 
     private void ToggleDemolishMode()
@@ -93,12 +103,14 @@ public class UI_script : MonoBehaviour
             buttonDemo.text = "On";
             buttonDemo.Q<VisualElement>().style.backgroundColor = Color.green;
             BuildManager.demoMode = true;
+            demoMode = true;
         }
         else
         {
             buttonDemo.text = "Off";
             buttonDemo.Q<VisualElement>().style.backgroundColor = Color.red;
             BuildManager.demoMode = false;
+            demoMode = false;   
         }
     }
     // Update is called once per frame
@@ -107,6 +119,10 @@ public class UI_script : MonoBehaviour
         if(storedMoney != MoneyManager.CurrentMoney)
         {
             UpdateMoney(0);
+        }
+        if(demoMode != BuildManager.demoMode) 
+        {
+            ToggleDemolishMode();
         }
     }
 }

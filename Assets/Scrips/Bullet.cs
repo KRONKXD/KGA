@@ -33,13 +33,13 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       // Debug.Log("collision");
-       if(explosiveRange > 0)
+        Destroy(gameObject);
+        if (explosiveRange > 0)
         {
             var hitColliders = Physics2D.OverlapCircleAll(transform.position, explosiveRange);
             foreach (var hitCollider in hitColliders)
             {
-                if (collision.gameObject.tag == "Enemy")
+                if (hitCollider.gameObject.tag == "Enemy")
                 {
                     hitCollider.gameObject.GetComponent<Enemy>().TakeDamage(damage);
                     //cia  jei darysim kad dmg darytu pagal atstuma nuo sprogimo centro
@@ -52,7 +52,7 @@ public class Bullet : MonoBehaviour
                    //Destroy(hitCollider.gameObject);
                 }
             }
-        }
+       }
        else if(collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
@@ -60,7 +60,7 @@ public class Bullet : MonoBehaviour
             Destroy(effectIns, 2f);
             //Destroy(collision.gameObject);
         }
-        Destroy(gameObject);
+        
     }
 
     

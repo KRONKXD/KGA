@@ -1,13 +1,18 @@
 //using System.Collections;
 //using System.Collections.Generic;
+
+using System;
 using System.Security.Cryptography;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     private Transform target;
     public float speed = 70f;
+    public int damage = 1;
     public float explosiveRange = 1f;
+    //public Enemy enemy;
 
     public GameObject impactEffect;
     public void Seek(Transform _target)
@@ -24,26 +29,8 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(target == null)
-        //{
-        //    Destroy(gameObject);
-        //    return;
-        //}
-
-        //Vector3 dir = target.position - transform.position;
-        //float distanceThisFrame = speed * Time.deltaTime;
-
-        //if(dir.magnitude <= distanceThisFrame) 
-        //{
-        //    HitTarget();
-        //    return;
-        //}
-
-        //transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-
         transform.position += transform.right * Time.deltaTime * speed;
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
        // Debug.Log("collision");
@@ -52,28 +39,31 @@ public class Bullet : MonoBehaviour
             var hitColliders = Physics2D.OverlapCircleAll(transform.position, explosiveRange);
             foreach (var hitCollider in hitColliders)
             {
-                if (hitCollider.gameObject.tag == "Enemy")
+                if (collision.gameObject.tag == "Enemy")
                 {
+                    hitCollider.gameObject.GetComponent<Enemy>().TakeDamage(damage);
                     //cia  jei darysim kad dmg darytu pagal atstuma nuo sprogimo centro
                     var closestPoint = hitCollider.ClosestPoint(transform.position);
                     var distance = Vector3.Distance(closestPoint, transform.position);
                     var damagePercent = Mathf.InverseLerp(explosiveRange, 0, distance);
                     //-----
-
                     GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
                     Destroy(effectIns, 2f);
-                    Destroy(hitCollider.gameObject);
+                   //Destroy(hitCollider.gameObject);
                 }
             }
         }
        else if(collision.gameObject.tag == "Enemy")
         {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(effectIns, 2f);
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
         Destroy(gameObject);
     }
+
+    
 
     void HitTarget()
     {

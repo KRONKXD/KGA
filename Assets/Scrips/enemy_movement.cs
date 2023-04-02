@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class enemy_movement : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 2f;
     public int bounty = 30;
     private Transform target;
     private int waypointIndex = 0;

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 2f;
     public int bounty = 60;
 
     private Transform target;
     private int waypointIndex = 0;
     public int maxHealth = 100;
+    public int health = 100;
+    public int damage = 1;
     private int currentHealth;
     public HealthBar healthBar;
 
@@ -35,9 +37,23 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
     private void OnDestroy()
     {
         MoneyManager.CurrentMoney += bounty;
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 
     void GetNextWaypoint()

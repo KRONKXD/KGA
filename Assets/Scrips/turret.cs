@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turret : MonoBehaviour
+public class  turret : MonoBehaviour
 {
     private Transform target;
     private turret instance;
@@ -23,6 +23,8 @@ public class turret : MonoBehaviour
 
     public Bullet bulletPrefab;
     public Transform firePoint;
+
+    public int damage = 40;
     
     // Start is called before the first frame update
     void Start()

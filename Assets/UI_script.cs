@@ -125,4 +125,14 @@ public class UI_script : MonoBehaviour
             ToggleDemolishMode();
         }
     }
+
+    public void UpdateHealth()
+    {
+        VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+        Label healthLabel = root.Q<Label>("health");
+        int currentHealth = HealthManager.GetHealthAmount();
+        healthLabel.text = healthLabel.text.Substring(0, 2) + currentHealth;
+    }
 }
+
+

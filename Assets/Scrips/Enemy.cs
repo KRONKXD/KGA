@@ -47,13 +47,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        MoneyManager.CurrentMoney += bounty;
-    }
-
     void Die()
     {
+        MoneyManager.CurrentMoney += bounty;
         Destroy(gameObject);
     }
 
@@ -66,5 +62,13 @@ public class Enemy : MonoBehaviour
         }
         waypointIndex++;
         target = waypoints.points[waypointIndex];
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player Base")
+        {
+            HealthManager.TakeDamage(damage);
+        }
     }
 }

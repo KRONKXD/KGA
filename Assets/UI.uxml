@@ -43,7 +43,7 @@
                 <ui:Button text="Pause" display-tooltip-when-elided="true" name="button_Pause" class="button" style="flex-direction: column; top: auto; right: auto; white-space: nowrap; position: relative; justify-content: flex-start; align-items: auto;" />
                 <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: flex-start; flex-wrap: nowrap;">
                     <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Scenes/map1/health.png?fileID=21300000&amp;guid=bfd06642cbe25a14b9fbd146f1a22afd&amp;type=3#health&apos;); width: 20px; height: 20px; margin-right: 5px; justify-content: center;" />
-                    <ui:Label text="x 100" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255);" />
+                    <ui:Label text="x YY" display-tooltip-when-elided="true" name="health" enable-rich-text="true" style="color: rgb(255, 255, 255);" />
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-direction: row; justify-content: flex-start; align-items: center;">
                     <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Scenes/map1/gold%20marker.png?fileID=21300000&amp;guid=621ed1f7e02f2ac44beaef71028aaff8&amp;type=3#gold marker&apos;); width: 20px; height: 20px; margin-right: 5px; align-items: flex-start; justify-content: center;" />

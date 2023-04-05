@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     public int damage = 1;
     public float explosiveRange = 1f;
     //public Enemy enemy;
+    bool hit = false;
 
     public GameObject impactEffect;
     public void Seek(Transform _target)
@@ -33,6 +34,8 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (hit)
+            return;
         Destroy(gameObject);
         if (explosiveRange > 0)
         {
@@ -41,6 +44,7 @@ public class Bullet : MonoBehaviour
             {
                 if (hitCollider.gameObject.tag == "Enemy")
                 {
+                    this.GetComponent<Collider2D>().enabled = false;
                     hitCollider.gameObject.GetComponent<Enemy>().TakeDamage(damage);
                     //cia  jei darysim kad dmg darytu pagal atstuma nuo sprogimo centro
                     var closestPoint = hitCollider.ClosestPoint(transform.position);
@@ -55,12 +59,13 @@ public class Bullet : MonoBehaviour
        }
        else if(collision.gameObject.tag == "Enemy")
         {
+            this.GetComponent<Collider2D>().enabled = false;
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(effectIns, 2f);
             //Destroy(collision.gameObject);
         }
-        
+        hit = true;
     }
 
     

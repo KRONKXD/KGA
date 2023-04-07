@@ -36,7 +36,11 @@ public class Bullet : MonoBehaviour
     {
         if (hit)
             return;
-        Destroy(gameObject);
+        if(collision.gameObject.tag != "Bullet")
+        {
+            hit = true;
+            Destroy(gameObject);
+        }
         if (explosiveRange > 0)
         {
             var hitColliders = Physics2D.OverlapCircleAll(transform.position, explosiveRange);
@@ -53,19 +57,28 @@ public class Bullet : MonoBehaviour
                     //-----
                     GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
                     Destroy(effectIns, 2f);
-                   //Destroy(hitCollider.gameObject);
+                    //Destroy(hitCollider.gameObject);
+                    //hit = true;
+                    //Destroy(gameObject);
                 }
             }
-       }
-       else if(collision.gameObject.tag == "Enemy")
+        }
+        else if (collision.gameObject.tag == "Enemy")
         {
             this.GetComponent<Collider2D>().enabled = false;
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(effectIns, 2f);
             //Destroy(collision.gameObject);
+            //hit = true;
+            //Destroy(gameObject);
         }
-        hit = true;
+        //else if (collision.gameObject.tag != "Bullet")
+        //{
+        //    hit = true;
+        //    Destroy(gameObject);
+        //}
+        
     }
 
     

@@ -15,12 +15,16 @@ public class Enemy : MonoBehaviour
     private int currentHealth;
     public HealthBar healthBar;
 
-
-
+    public int splitInto = 0;
+    public GameObject splitMinion;
+    public bool minion = false;
     // Start is called before the first frame update
     void Start()
     {
-        target = waypoints.points[0];
+        if(!minion)
+        {
+            target = waypoints.points[0];
+        }
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -51,6 +55,34 @@ public class Enemy : MonoBehaviour
     {
         MoneyManager.CurrentMoney += bounty;
         Destroy(gameObject);
+        if(splitInto != 0)
+        {
+            for (int i = 0; i < splitInto; i++)
+            {
+                GameObject minion;
+                Vector3 misplaceMin, misplaceMax, misplace = Vector3.zero;
+                misplaceMin = transform.position;
+                misplaceMin.x -= 0.3f;
+                misplaceMin.y -= 0.3f;
+                misplaceMax = transform.position;
+                misplaceMax.x += 0.3f;
+                misplaceMax.y += 0.3f;
+                Random(ref misplace, misplaceMin, misplaceMax);
+                minion = Instantiate(splitMinion, misplace, transform.rotation);
+                minion.GetComponent<Enemy>().setWaypoint(target, waypointIndex);
+            }
+        }
+    }
+
+    public void setWaypoint(Transform newTarget, int newWaypointIndex)
+    {
+        target = newTarget;
+        waypointIndex = newWaypointIndex;
+    }
+
+    public static void Random(ref Vector3 myVector, Vector3 min, Vector3 max)
+    {
+        myVector = new Vector3(UnityEngine.Random.Range(min.x, max.x), UnityEngine.Random.Range(min.y, max.y), UnityEngine.Random.Range(min.z, max.z));
     }
 
     void GetNextWaypoint()

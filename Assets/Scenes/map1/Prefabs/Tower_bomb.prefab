@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29641c716b619944d8207d34d91cdb3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 4
+  range: 2
   fireRate: 0.7
   price: 200
   enemyTag: Enemy
@@ -170,6 +170,7 @@ MonoBehaviour:
   turnSpeed: 1000
   bulletPrefab: {fileID: -3050844872919590641, guid: 530ed46e0dcd3624592e6a3dd01266ae, type: 3}
   firePoint: {fileID: 6891754641232160542}
+  damage: 40
 --- !u!61 &5439795425235910617
 BoxCollider2D:
   m_ObjectHideFlags: 0

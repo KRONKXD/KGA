@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public int damage = 1;
     private int currentHealth;
     public HealthBar healthBar;
+    public waypoints waypoint = null;
 
     public int splitInto = 0;
     public GameObject splitMinion;
@@ -23,7 +24,7 @@ public class Enemy : MonoBehaviour
     {
         if(!minion)
         {
-            target = waypoints.points[0];
+            target = waypoint.points[0];
         }
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -70,6 +71,7 @@ public class Enemy : MonoBehaviour
                 Random(ref misplace, misplaceMin, misplaceMax);
                 minion = Instantiate(splitMinion, misplace, transform.rotation);
                 minion.GetComponent<Enemy>().setWaypoint(target, waypointIndex);
+                minion.GetComponent<Enemy>().waypoint = waypoint;
             }
         }
     }
@@ -87,13 +89,13 @@ public class Enemy : MonoBehaviour
 
     void GetNextWaypoint()
     {
-        if (waypointIndex >= waypoints.points.Length - 1) 
+        if (waypointIndex >= waypoint.points.Length - 1) 
         {
             Destroy(gameObject);
             return;
         }
         waypointIndex++;
-        target = waypoints.points[waypointIndex];
+        target = waypoint.points[waypointIndex];
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

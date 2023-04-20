@@ -5964,6 +5964,7 @@ MonoBehaviour:
   paused_Menu: {fileID: 1028068128}
   buy1_Tower: {fileID: 4379562713138773979, guid: 2fc6b7c356f8e0d4e83ac375e70638f5, type: 3}
   buy2_Tower: {fileID: 6891754642554617626, guid: 5a161d466fdffe44788dd5b82f4120b7, type: 3}
+  buy3_Tower: {fileID: 4379562713138773979, guid: a56cf2ca116d3d045915d2047f870029, type: 3}
 --- !u!1001 &1723709415
 PrefabInstance:
   m_ObjectHideFlags: 0

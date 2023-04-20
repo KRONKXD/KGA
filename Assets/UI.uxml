@@ -14,9 +14,9 @@
                     <ui:Button text="Buy" display-tooltip-when-elided="true" name="buy2" class="button" />
                 </ui:VisualElement>
                 <ui:VisualElement name="tower3" class="storeWindow" style="background-image: none; width: auto; height: auto; -unity-background-scale-mode: scale-and-crop; align-items: center; justify-content: flex-end; flex-direction: column; flex-wrap: nowrap; flex-shrink: 1; max-width: none; max-height: none; min-width: auto; min-height: auto;">
-                    <ui:Label text="X $" display-tooltip-when-elided="true" name="price3" style="color: rgb(255, 255, 255);" />
-                    <ui:VisualElement style="background-image: url(&apos;project://database/Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/d_icondeletedlocaloverlay@2x.png?fileID=21300000&amp;guid=92b204cca46037444ab18ba6701f86f7&amp;type=3#d_icondeletedlocaloverlay@2x&apos;); width: auto; height: auto; justify-content: center; align-items: flex-start; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; max-width: 80px; max-height: 80px; min-width: 32px; min-height: 32px; scale: 1 1;" />
-                    <ui:Button text="Buy" display-tooltip-when-elided="true" name="buy3" class="button" style="background-color: rgb(77, 63, 39); color: rgb(87, 87, 87);" />
+                    <ui:Label text="100$" display-tooltip-when-elided="true" name="price3" style="color: rgb(255, 255, 255);" />
+                    <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Scenes/map1/bokstas_burtas.png?fileID=-688877436&amp;guid=da8756a22e41d0d419cf9ff551693398&amp;type=3#bokstas_burtas_0&apos;); width: auto; height: auto; justify-content: center; align-items: flex-start; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; max-width: 80px; max-height: 80px; min-width: 32px; min-height: 32px; scale: 1 1; -unity-background-image-tint-color: rgb(0, 255, 252);" />
+                    <ui:Button text="Buy" display-tooltip-when-elided="true" name="buy3" class="button" />
                 </ui:VisualElement>
                 <ui:VisualElement name="tower4" class="storeWindow" style="background-image: none; width: auto; height: auto; -unity-background-scale-mode: scale-and-crop; align-items: center; justify-content: flex-end; flex-direction: column;">
                     <ui:Label text="X $" display-tooltip-when-elided="true" name="price4" style="color: rgb(255, 255, 255);" />

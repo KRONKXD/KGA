@@ -19,6 +19,13 @@ public class Enemy : MonoBehaviour
     public int splitInto = 0;
     public GameObject splitMinion;
     public bool minion = false;
+
+    //freeze stuff
+    private bool timerRunning = false;
+    private float timer = 0f;
+    private float oldSpeed = 0f;
+    private Color frozenColor = Color.blue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +46,22 @@ public class Enemy : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) <= 0.1f)
         {
             GetNextWaypoint();
+        }
+
+        if (timerRunning)
+        {
+            //Debug.Log(timer);
+            timer -= Time.smoothDeltaTime;
+            if (timer >= 0)
+            { 
+            }
+            else
+            {
+                timerRunning = false;
+                speed = oldSpeed;
+                this.GetComponent<SpriteRenderer>().color = Color.white;
+                this.GetComponent<Animator>().speed = 1;
+            }
         }
     }
 
@@ -104,5 +127,15 @@ public class Enemy : MonoBehaviour
         {
             HealthManager.TakeDamage(damage);
         }
+    }
+
+    public void Freeze(float freezeTime)
+    {
+        oldSpeed = speed;
+        speed = 0;
+        this.GetComponent<SpriteRenderer>().color = frozenColor;
+        this.GetComponent<Animator>().speed = 0;
+        timerRunning = true;
+        timer = freezeTime;
     }
 }

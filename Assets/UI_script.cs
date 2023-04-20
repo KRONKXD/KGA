@@ -16,8 +16,10 @@ public class UI_script : MonoBehaviour
     public GameObject paused_Menu;
     public GameObject buy1_Tower;
     public GameObject buy2_Tower;
+    public GameObject buy3_Tower;
     private int price1Tower;
     private int price2Tower;
+    private int price3Tower;
     private int storedMoney;
     private bool demoMode;
     //private VisualElement root;
@@ -65,6 +67,24 @@ public class UI_script : MonoBehaviour
             }
         };
 
+        Button buttonBuy3 = root.Q<Button>("buy3");
+        buttonBuy3.clicked += () =>
+        {
+            if (BuildManager.demoMode)
+            {
+                ToggleDemolishMode();
+            }
+            if (MoneyManager.CurrentMoney >= price3Tower)
+            {
+                BuildManager.instance.SetTowerToBuild(buy3_Tower);
+                BuildManager.buildMode = true;
+            }
+            else
+            {
+                Debug.Log("u broke lol");
+            }
+        };
+
         Button buttonDemo = root.Q<Button>("demolish");
         buttonDemo.clicked += () =>
         {
@@ -78,10 +98,12 @@ public class UI_script : MonoBehaviour
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         price1Tower = buy1_Tower.GetComponent<turret>().GetTowerPrice();
         price2Tower = buy2_Tower.GetComponent<turret>().GetTowerPrice();
+        price3Tower = buy3_Tower.GetComponent<turret>().GetTowerPrice();
         UpdateMoney(0);
         root = GetComponent<UIDocument>().rootVisualElement;
         root.Q<Label>("price1").text = price1Tower + " G";
         root.Q<Label>("price2").text = price2Tower + " G";
+        root.Q<Label>("price3").text = price3Tower + " G";
         demoMode = false;
     }
 

@@ -3,15 +3,19 @@
 
 using System;
 using System.Security.Cryptography;
+using UnityEditor.Build;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class Bullet : MonoBehaviour
 {
     private Transform target;
     public float speed = 70f;
     public int damage = 1;
-    public float explosiveRange = 1f;
+    public float explosiveRange = 0f;
+    public float freezeTime = 0f;
+
     //public Enemy enemy;
     bool hit = false;
 
@@ -31,6 +35,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.position += transform.right * Time.deltaTime * speed;
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -57,6 +62,10 @@ public class Bullet : MonoBehaviour
                     //-----
                     GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
                     Destroy(effectIns, 2f);
+                    if (freezeTime > 0)
+                    {
+                        hitCollider.gameObject.GetComponent<Enemy>().Freeze(freezeTime);
+                    }
                     //Destroy(hitCollider.gameObject);
                     //hit = true;
                     //Destroy(gameObject);
@@ -67,8 +76,13 @@ public class Bullet : MonoBehaviour
         {
             this.GetComponent<Collider2D>().enabled = false;
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            
             GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(effectIns, 2f);
+            if (freezeTime > 0)
+            {
+                collision.gameObject.GetComponent<Enemy>().Freeze(freezeTime);
+            }
             //Destroy(collision.gameObject);
             //hit = true;
             //Destroy(gameObject);
@@ -79,15 +93,5 @@ public class Bullet : MonoBehaviour
         //    Destroy(gameObject);
         //}
         
-    }
-
-    
-
-    void HitTarget()
-    {
-        GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(effectIns, 2f);
-        Destroy(target.gameObject);
-        Destroy(gameObject);
     }
 }

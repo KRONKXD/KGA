@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.iOS;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class UI_script : MonoBehaviour
 {
@@ -154,6 +155,29 @@ public class UI_script : MonoBehaviour
         Label healthLabel = root.Q<Label>("health");
         int currentHealth = HealthManager.GetHealthAmount();
         healthLabel.text = healthLabel.text.Substring(0, 2) + currentHealth;
+    }
+
+    bool gameHasEnded = false;
+    public float restartDelay = 1f;
+
+    public void CompletedLevel()
+    {
+        Debug.Log("LEVEL WON!");
+    }
+
+    public void EndGame()
+    {
+        if (gameHasEnded == false)
+        {
+            gameHasEnded = true;
+            Debug.Log("GAME OVER");
+            Invoke("Restart", restartDelay);
+        }
+    }
+
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 

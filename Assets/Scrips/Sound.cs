@@ -16,4 +16,8 @@ public class Sound : MonoBehaviour
     {
         soundPlayer.PlayOneShot(clickFx);
     }
+    public void Awake() 
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
 }

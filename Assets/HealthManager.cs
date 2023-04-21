@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -35,4 +36,23 @@ public class HealthManager : MonoBehaviour
     //{
 
     //}
+    
+    public static void OnTriggerEnter()
+    {
+        //int health = inGameUI.GetComponent<UI_script>().UpdateHealth();
+        // int currentHealth = HealthManager.GetHealthAmount();
+
+        if (currentHealth <= 0)
+        {
+            //inGameUI = activeUI;
+            //inGameUI.GetComponent<UI_script>().CompletedLevel();
+            inGameUI.GetComponent<UI_script>().EndGame();
+            SceneManager.LoadScene("Lose");
+        }
+        else
+        {
+            //inGameUI.GetComponent<UI_script>().EndGame();
+        }
+        //activeUI.CompletedLevel();
+    }
 }

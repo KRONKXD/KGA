@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
+    public EnemySpawn enemySpawn;
+
     public float speed = 2f;
     public int bounty = 60;
 
@@ -25,6 +28,8 @@ public class Enemy : MonoBehaviour
     private float timer = 0f;
     private float oldSpeed = 0f;
     private Color frozenColor = Color.blue;
+
+    int enemiesKilled;
 
     // Start is called before the first frame update
     void Start()

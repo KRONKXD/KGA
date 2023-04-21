@@ -155,6 +155,7 @@ public class UI_script : MonoBehaviour
         Label healthLabel = root.Q<Label>("health");
         int currentHealth = HealthManager.GetHealthAmount();
         healthLabel.text = healthLabel.text.Substring(0, 2) + currentHealth;
+        HealthManager.OnTriggerEnter();
     }
 
     bool gameHasEnded = false;

@@ -7,6 +7,8 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private float spawnRate=1f;
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private bool canSpawn = true;
+
+    int numberOfEnemies = 10;
     
     // Start is called before the first frame update
     void Start()
@@ -30,5 +32,10 @@ public class EnemySpawn : MonoBehaviour
             GameObject enemyToSpawn = enemyPrefabs[random];
             Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
         }
+    }
+
+    public int GetNumberOfEnemies()
+    {
+        return numberOfEnemies;
     }
 }

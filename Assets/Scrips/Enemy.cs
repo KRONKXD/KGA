@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     private float oldSpeed = 0f;
     private Color frozenColor = Color.blue;
 
-    int enemiesKilled;
+    static int enemiesKilled=0;
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +83,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         MoneyManager.CurrentMoney += bounty;
+        enemiesKilled++;
         Destroy(gameObject);
         if(splitInto != 0)
         {
@@ -142,5 +143,10 @@ public class Enemy : MonoBehaviour
         this.GetComponent<Animator>().speed = 0;
         timerRunning = true;
         timer = freezeTime;
+    }
+
+    public static int GetNumberOfEnemiesDied()
+    {
+        return enemiesKilled;
     }
 }

@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelection/Medium.unity
     guid: 415d7c45a2db26f4a9cfbbcd18af8f98
   - enabled: 1
+    path: Assets/Scenes/LevelSelection/Lose.unity
+    guid: 169e363eb0e118643b03ffbc50498898
+  - enabled: 1
     path: Assets/Scenes/LevelSelection/Hard.unity
     guid: 72af4c37f9fb7f443acd7f1350a40735
   - enabled: 1
@@ -27,6 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/LevelSelection/Lose.unity
-    guid: 169e363eb0e118643b03ffbc50498898
+    path: Assets/Scenes/LevelSelection/Win.unity
+    guid: 5f8582c8f8791b546b2d2b4a6e35ebe3
   m_configObjects: {}

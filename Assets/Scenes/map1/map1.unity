@@ -6848,6 +6848,10 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6253923868634079151, guid: 4caaf8e32b41df14f9126cd5a6672daf, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253923868634079151, guid: 4caaf8e32b41df14f9126cd5a6672daf, type: 3}
       propertyPath: waypoint
       value: 
       objectReference: {fileID: 1410946557}
@@ -9662,7 +9666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5500219951871402604, guid: fdb38fdb9faa5f04895ccb92ad3173c8, type: 3}
       propertyPath: damage
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5500219951871402604, guid: fdb38fdb9faa5f04895ccb92ad3173c8, type: 3}
       propertyPath: waypoint

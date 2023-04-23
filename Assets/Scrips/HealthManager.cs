@@ -50,7 +50,7 @@ public class HealthManager : MonoBehaviour
         //int health = inGameUI.GetComponent<UI_script>().UpdateHealth();
         // int currentHealth = HealthManager.GetHealthAmount();
 
-        if(enimyNumber == diedEnemyNumber && currentHealth > 0 && currentHealth < 100)
+        if(diedEnemyNumber>10 && currentHealth > 0 && currentHealth < 100)
         {
             SceneManager.LoadScene("Win");
         }

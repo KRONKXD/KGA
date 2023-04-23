@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,14 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private Text volumeTextUI = null;
+    private Button DifficultyButton;
+    public GameObject DifficultyToggles;
+    void Start()
+    {
+        DifficultyButton.onClick.AddListener(() => {
+            DifficultyToggles.transform.GetChild((int)GameValues.Difficulty).GetComponent<Toggle>().isOn = true;
+        });
+    }
 
     public void PlayGame(string sceneName)
     {
@@ -24,4 +33,23 @@ public class MainMenu : MonoBehaviour
     {
         volumeTextUI.text = volume.ToString("0.0");
     }
+
+    #region Difficulty
+
+    public void SetEasyDifficulty(bool isOn)
+    {
+        if (isOn)
+            GameValues.Difficulty = GameValues.Difficulties.Easy;
+    }
+    public void SetMediumDifficulty(bool isOn)
+    {
+        if (isOn)
+            GameValues.Difficulty = GameValues.Difficulties.Medium;
+    }
+    public void SetHardDifficulty(bool isOn)
+    {
+        if (isOn)
+            GameValues.Difficulty = GameValues.Difficulties.Hard;
+    }
+    #endregion
 }

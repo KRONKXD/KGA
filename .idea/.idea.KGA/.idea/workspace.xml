@@ -7,6 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scrips/GameValues.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -66,6 +69,7 @@
       <workItem from="1679263722300" duration="1737000" />
       <workItem from="1679303385067" duration="1408000" />
       <workItem from="1680399232718" duration="8827000" />
+      <workItem from="1682276796518" duration="4719000" />
     </task>
     <servers />
   </component>

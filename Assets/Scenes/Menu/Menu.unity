@@ -3280,6 +3280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 0}
   volumeTextUI: {fileID: 0}
+  DifficultyToggles: {fileID: 889964159}
 --- !u!1 &1438401658
 GameObject:
   m_ObjectHideFlags: 0

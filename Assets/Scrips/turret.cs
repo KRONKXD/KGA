@@ -8,6 +8,9 @@ public class  turret : MonoBehaviour
     private Transform target;
     private turret instance;
 
+    public AudioSource soundPlayer;
+    public AudioClip shot;
+
     [Header("Attributes")]
 
     public float range = 15f;
@@ -60,7 +63,7 @@ public class  turret : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         if (target == null)
             return;
 
@@ -79,11 +82,14 @@ public class  turret : MonoBehaviour
 
         if (fireCountdown <= 0f)
         {
+            soundPlayer.PlayOneShot(shot);
             Shoot();
             fireCountdown = 1f / fireRate;
+            soundPlayer.PlayOneShot(shot);
         }
 
         fireCountdown -= Time.deltaTime;
+        soundPlayer.PlayOneShot(shot);
     }
 
     void Shoot()
@@ -94,6 +100,7 @@ public class  turret : MonoBehaviour
         //{
         //    //bullet.Seek(target);
         //}
+        soundPlayer.PlayOneShot(shot);
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 

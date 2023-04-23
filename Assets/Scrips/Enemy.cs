@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
+    public AudioSource soundPlayer;
+    public AudioClip deadSound;
+
     public EnemySpawn enemySpawn;
 
     public float speed = 2f;
@@ -29,7 +32,7 @@ public class Enemy : MonoBehaviour
     private float oldSpeed = 0f;
     private Color frozenColor = Color.blue;
 
-    static int enemiesKilled=0;
+    static int enemiesKilled;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +79,7 @@ public class Enemy : MonoBehaviour
         healthBar.SetHealth(health);
         if (health <= 0)
         {
+            soundPlayer.PlayOneShot(deadSound);
             Die();
         }
     }

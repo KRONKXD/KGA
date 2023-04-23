@@ -8,11 +8,12 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private bool canSpawn = true;
 
-    static int numberOfEnemies = 0;
+    static int numberOfEnemies;
     
     // Start is called before the first frame update
     void Start()
     {
+        numberOfEnemies++;
         StartCoroutine(Spawner());
     }
 

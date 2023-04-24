@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemySpawn : MonoBehaviour
 {
     [SerializeField] private float spawnRate=1f;
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private bool canSpawn = true;
-
+    public waypoints waypoint = null;
     static int numberOfEnemies;
     
     // Start is called before the first frame update
@@ -31,8 +32,9 @@ public class EnemySpawn : MonoBehaviour
             yield return wait;
             int random = Random.Range(0, enemyPrefabs.Length);
             GameObject enemyToSpawn = enemyPrefabs[random];
-            Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
+            GameObject enemy = Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
             numberOfEnemies++;
+            enemy.GetComponent<Enemy>().waypoint = waypoint;
         }
     }
 

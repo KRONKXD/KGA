@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29641c716b619944d8207d34d91cdb3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPlayer: {fileID: 0}
+  shot: {fileID: 0}
   range: 3
   fireRate: 2
   price: 100
@@ -139,7 +141,7 @@ MonoBehaviour:
   turnSpeed: 100
   bulletPrefab: {fileID: -3050844872919590641, guid: cc87dacb7c7b3ff428e40e2e52db1341, type: 3}
   firePoint: {fileID: 4379562713237676013}
-  damage: 40
+  damage: 30
 --- !u!61 &533587985
 BoxCollider2D:
   m_ObjectHideFlags: 0

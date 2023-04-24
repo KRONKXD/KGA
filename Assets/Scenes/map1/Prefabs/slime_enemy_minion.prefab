@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f89f899f89a054b948c03d8093d96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPlayer: {fileID: 0}
+  deadSound: {fileID: 8300000, guid: 73b0b08cf643aa74192d4795ea42bd91, type: 3}
   enemySpawn: {fileID: 0}
   speed: 3
   bounty: 10
@@ -137,8 +139,6 @@ MonoBehaviour:
   splitInto: 0
   splitMinion: {fileID: 0}
   minion: 1
-  audioSource: {fileID: 0}
-  deadAudioClip: {fileID: 8300000, guid: 73b0b08cf643aa74192d4795ea42bd91, type: 3}
 --- !u!95 &7810153680862651371
 Animator:
   serializedVersion: 5

@@ -79,7 +79,7 @@ public class Enemy : MonoBehaviour
         healthBar.SetHealth(health);
         if (health <= 0)
         {
-            soundPlayer.PlayOneShot(deadSound);
+            //soundPlayer.PlayOneShot(deadSound);
             Die();
         }
     }
@@ -141,6 +141,7 @@ public class Enemy : MonoBehaviour
 
     public void Freeze(float freezeTime)
     {
+        if(speed != 0)
         oldSpeed = speed;
         speed = 0;
         this.GetComponent<SpriteRenderer>().color = frozenColor;

@@ -89,7 +89,8 @@ public class Enemy : MonoBehaviour
         MoneyManager.CurrentMoney += bounty;
         enemiesKilled++;
         Destroy(gameObject);
-        if(splitInto != 0)
+        HealthManager.diedEnemyNumber++;
+        if (splitInto != 0)
         {
             for (int i = 0; i < splitInto; i++)
             {

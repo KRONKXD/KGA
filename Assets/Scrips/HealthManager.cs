@@ -12,7 +12,8 @@ public class HealthManager : MonoBehaviour
     static UIDocument inGameUI;
     static int currentHealth;
     static int enimyNumber = EnemySpawn.GetNumberOfEnemies();
-    static int diedEnemyNumber = Enemy.GetNumberOfEnemiesDied();
+    //public static int diedEnemyNumber = Enemy.GetNumberOfEnemiesDied();
+    public static int diedEnemyNumber = 0;
     //enimyNumber=enimyNumber+3;
     //static int x = 0;
 
@@ -38,19 +39,9 @@ public class HealthManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    //void Update()
-    //{
-
-    //}
-    //static int enimyNumber = EnemySpawn.GetNumberOfEnemies();
-    //public int diedEnemyNumber = Enemy.GetNumberOfEnemiesDied();
-
-    public static void OnTriggerEnter()
+    void Update()
     {
-        //int health = inGameUI.GetComponent<UI_script>().UpdateHealth();
-        // int currentHealth = HealthManager.GetHealthAmount();
-
-        if(diedEnemyNumber>10 && currentHealth > 0 && currentHealth < 100)
+        if (diedEnemyNumber > 25 && currentHealth > 0)
         {
             SceneManager.LoadScene("Win");
         }
@@ -62,6 +53,17 @@ public class HealthManager : MonoBehaviour
             //inGameUI.GetComponent<UI_script>().EndGame();
             SceneManager.LoadScene("Lose");
         }
+
+    }
+    //static int enimyNumber = EnemySpawn.GetNumberOfEnemies();
+    //public int diedEnemyNumber = Enemy.GetNumberOfEnemiesDied();
+
+    public static void OnTriggerEnter()
+    {
+        //int health = inGameUI.GetComponent<UI_script>().UpdateHealth();
+        // int currentHealth = HealthManager.GetHealthAmount();
+
+        
         
         //activeUI.CompletedLevel();
     }

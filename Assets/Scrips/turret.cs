@@ -89,7 +89,6 @@ public class  turret : MonoBehaviour
         }
 
         fireCountdown -= Time.deltaTime;
-        soundPlayer.PlayOneShot(shot);
     }
 
     void Shoot()
@@ -100,7 +99,7 @@ public class  turret : MonoBehaviour
         //{
         //    //bullet.Seek(target);
         //}
-        soundPlayer.PlayOneShot(shot);
+        //soundPlayer.PlayOneShot(shot);
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 

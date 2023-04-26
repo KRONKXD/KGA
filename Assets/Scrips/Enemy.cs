@@ -86,6 +86,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        soundPlayer.PlayOneShot(deadSound);
         MoneyManager.CurrentMoney += bounty;
         enemiesKilled++;
         Destroy(gameObject);
@@ -125,6 +126,7 @@ public class Enemy : MonoBehaviour
     {
         if (waypointIndex >= waypoint.points.Length - 1) 
         {
+            soundPlayer.PlayOneShot(deadSound);
             Destroy(gameObject);
             return;
         }

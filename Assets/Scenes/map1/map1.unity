@@ -3343,6 +3343,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1410946557}
     - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
+      propertyPath: waves.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
       propertyPath: enemyPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 353317566192387591, guid: 5d3f40975fc0d5943917d2ce62ecbe05, type: 3}
@@ -3362,6 +3366,14 @@ PrefabInstance:
       propertyPath: enemyPrefabs.Array.data[4]
       value: 
       objectReference: {fileID: 8957190141870010538, guid: 794c5723466bb084f91ea1ec3e106785, type: 3}
+    - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
+      propertyPath: waves.Array.data[0].numberOfEnemies
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
+      propertyPath: waves.Array.data[1].numberOfEnemies
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
 --- !u!1 &940062161

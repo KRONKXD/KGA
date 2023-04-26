@@ -3,12 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
+[System.Serializable]
+public class Wave
+{
+    private string waveName;
+    public int numberOfEnemies;
+    public GameObject[] enemyType;
+}
 public class EnemySpawn : MonoBehaviour
 {
     [SerializeField] private float spawnRate=1f;
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private bool canSpawn = true;
+
     public waypoints waypoint = null;
+
+    [SerializeField] private Wave[] waves;
+    private int currentWaveNumber;
+
+
     static int numberOfEnemies;
     
     // Start is called before the first frame update
@@ -21,7 +34,11 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GameObject[] totalenemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (totalenemies.Length == 0 && !canSpawn)
+        {
+            currentWaveNumber++;
+        }
     }
 
     private IEnumerator Spawner()

@@ -9,6 +9,9 @@ public class Buildable : MonoBehaviour
     //private Renderer rend;
     //private Color startColor;
 
+    public AudioSource soundPlayer;
+    public AudioClip build;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,7 @@ public class Buildable : MonoBehaviour
             //Debug.Log(hitColliders.Length);
             if (hitColliders.Length < 2)
             {
+                soundPlayer.PlayOneShot(build);
                 GameObject towerToBuild = BuildManager.instance.GetTowerToBuild();
                 Instantiate(towerToBuild, BuildManager.worldPos, transform.rotation);
                 BuildManager.buildMode = false;

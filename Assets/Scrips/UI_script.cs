@@ -14,9 +14,8 @@ public class UI_script : MonoBehaviour
     //{
 
     //} 
-    public AudioSource soundPlayer;
-    public AudioClip build;
-    public AudioClip loseHealth;
+
+    private VisualElement root;
 
     public GameObject paused_Menu;
     public GameObject buy1_Tower;
@@ -45,7 +44,7 @@ public class UI_script : MonoBehaviour
             }
             if (MoneyManager.CurrentMoney >= price1Tower)
             {
-                soundPlayer.PlayOneShot(build);
+                //soundPlayer.PlayOneShot(build);
                 BuildManager.instance.SetTowerToBuild(buy1_Tower);
                 BuildManager.buildMode = true;
             }
@@ -64,7 +63,7 @@ public class UI_script : MonoBehaviour
             }
             if (MoneyManager.CurrentMoney >= price2Tower)
             {
-                soundPlayer.PlayOneShot(build);
+                //soundPlayer.PlayOneShot(build);
                 BuildManager.instance.SetTowerToBuild(buy2_Tower);
                 BuildManager.buildMode = true;
             }
@@ -83,7 +82,7 @@ public class UI_script : MonoBehaviour
             }
             if (MoneyManager.CurrentMoney >= price3Tower)
             {
-                soundPlayer.PlayOneShot(build);
+                //soundPlayer.PlayOneShot(build);
                 BuildManager.instance.SetTowerToBuild(buy3_Tower);
                 BuildManager.buildMode = true;
             }
@@ -154,6 +153,9 @@ public class UI_script : MonoBehaviour
         {
             ToggleDemolishMode();
         }
+        VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+        Label wave = root.Q<Label>("wave");
+        wave.text = "x " + WinLoseManager.deadEnemyNumber;
     }
 
     public void UpdateHealth()
@@ -162,8 +164,7 @@ public class UI_script : MonoBehaviour
         Label healthLabel = root.Q<Label>("health");
         int currentHealth = HealthManager.GetHealthAmount();
         healthLabel.text = healthLabel.text.Substring(0, 2) + currentHealth;
-        HealthManager.OnTriggerEnter();
-        soundPlayer.PlayOneShot(loseHealth);
+        //soundPlayer.PlayOneShot(loseHealth);
     }
 
     bool gameHasEnded = false;

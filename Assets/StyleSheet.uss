@@ -24,6 +24,9 @@
     padding-right: 4px;
     padding-top: 0;
     padding-bottom: 0;
+    width: auto;
+    height: auto;
+    font-size: 20px;
 }
 
 .storeWindow {
@@ -48,4 +51,20 @@
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: rgb(54, 49, 84);
+}
+
+.counter {
+    font-size: 25px;
+    -unity-font-style: bold;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-left;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.icon {
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
 }

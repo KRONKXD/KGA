@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
     private float reviveTimer = 0f;
     static int enemiesKilled;
     private bool revived = false;
+    private Animator mAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,7 @@ public class Enemy : MonoBehaviour
         }
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        if (necromancer) mAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -95,6 +97,7 @@ public class Enemy : MonoBehaviour
                     oldSpeed = speed;
                 speed = 0;
                 reviveTimer -= Time.smoothDeltaTime;
+                mAnimator.SetTrigger("TrRevive");
                 if (reviveTimer >= 0)
                 {
                     //Debug.Log("baiges laikas, bandom revive");
@@ -103,6 +106,7 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
+                    //mAnimator.SetTrigger("TrRevive");
                     Revive();
                     speed = oldSpeed;
                 }
@@ -137,7 +141,7 @@ public class Enemy : MonoBehaviour
         }
             
         Destroy(gameObject);
-        HealthManager.diedEnemyNumber++;
+        WinLoseManager.deadEnemyNumber++;
         
         if (splitInto != 0)
         {

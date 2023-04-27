@@ -39,15 +39,23 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:Label text="Shop" display-tooltip-when-elided="true" name="Label" enable-rich-text="true" style="flex-wrap: nowrap; justify-content: flex-start; align-items: stretch; position: relative; top: auto; left: auto; font-size: 48px; -unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&apos;); -unity-font-style: bold; color: rgb(255, 255, 255);" />
-            <ui:VisualElement name="topBit" style="top: auto; align-items: center; height: auto; width: 100%; justify-content: space-between; min-width: auto; min-height: auto; -unity-text-align: upper-left; flex-wrap: nowrap; flex-direction: row-reverse;">
+            <ui:VisualElement name="toprow3" style="top: auto; align-items: center; height: auto; width: 100%; justify-content: flex-end; min-width: auto; min-height: auto; -unity-text-align: upper-left; flex-wrap: nowrap; flex-direction: row-reverse; padding-top: 5px; padding-bottom: 5px;">
+                <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: flex-start; flex-wrap: nowrap;">
+                    <ui:VisualElement class="icon" style="background-image: url(&apos;project://database/Assets/Scenes/map1/health.png?fileID=21300000&amp;guid=bfd06642cbe25a14b9fbd146f1a22afd&amp;type=3#health&apos;);" />
+                    <ui:Label text="x YY" display-tooltip-when-elided="true" name="health" enable-rich-text="true" class="counter" style="color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="toprow2" style="top: auto; align-items: center; height: auto; width: 100%; justify-content: flex-end; min-width: auto; min-height: auto; -unity-text-align: upper-left; flex-wrap: nowrap; flex-direction: row-reverse; padding-top: 5px; padding-bottom: 5px;">
+                <ui:VisualElement style="flex-direction: row; justify-content: flex-start; align-items: center;">
+                    <ui:VisualElement class="icon" style="background-image: url(&apos;project://database/Assets/Scenes/map1/gold%20marker.png?fileID=21300000&amp;guid=621ed1f7e02f2ac44beaef71028aaff8&amp;type=3#gold marker&apos;);" />
+                    <ui:Label text="x XX" display-tooltip-when-elided="true" name="money" enable-rich-text="true" class="counter" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="toprow1" style="top: auto; align-items: center; height: auto; width: 100%; justify-content: space-between; min-width: auto; min-height: auto; -unity-text-align: upper-left; flex-wrap: nowrap; flex-direction: row-reverse; padding-top: 5px; padding-bottom: 5px;">
                 <ui:Button text="Pause" display-tooltip-when-elided="true" name="button_Pause" class="button" style="flex-direction: column; top: auto; right: auto; white-space: nowrap; position: relative; justify-content: flex-start; align-items: auto;" />
                 <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: flex-start; flex-wrap: nowrap;">
-                    <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Scenes/map1/health.png?fileID=21300000&amp;guid=bfd06642cbe25a14b9fbd146f1a22afd&amp;type=3#health&apos;); width: 20px; height: 20px; margin-right: 5px; justify-content: center;" />
-                    <ui:Label text="x YY" display-tooltip-when-elided="true" name="health" enable-rich-text="true" style="color: rgb(255, 255, 255);" />
-                </ui:VisualElement>
-                <ui:VisualElement style="flex-direction: row; justify-content: flex-start; align-items: center;">
-                    <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Scenes/map1/gold%20marker.png?fileID=21300000&amp;guid=621ed1f7e02f2ac44beaef71028aaff8&amp;type=3#gold marker&apos;); width: 20px; height: 20px; margin-right: 5px; align-items: flex-start; justify-content: center;" />
-                    <ui:Label text="x XX" display-tooltip-when-elided="true" name="money" enable-rich-text="true" style="align-items: flex-end; flex-wrap: nowrap; justify-content: center; flex-direction: column; color: rgb(255, 255, 255); -unity-text-align: middle-left;" />
+                    <ui:VisualElement class="icon" style="background-image: url(&apos;project://database/Assets/Scenes/map1/skull.png?fileID=21300000&amp;guid=9921e2d59d99ca94eb83c54dbba1159a&amp;type=3#skull&apos;);" />
+                    <ui:Label text="x ZZ / zz" display-tooltip-when-elided="true" name="wave" enable-rich-text="true" class="counter" style="color: rgb(255, 255, 255);" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
-
     public GameObject standartTowerPrefab;
 
     public static BuildManager instance;
@@ -67,11 +66,6 @@ public class BuildManager : MonoBehaviour
                 demoMode = false;
             }
         }
-    }
-
-    private void OnMouseDown()
-    {
-        
     }
 
     private void Awake()

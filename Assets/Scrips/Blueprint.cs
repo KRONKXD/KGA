@@ -10,9 +10,6 @@ public class Blueprint : MonoBehaviour
     public GameObject buildingRange;
     private float towerRange = 0f;
 
-    public AudioSource soundPlayer;
-    public AudioClip build;
-
     void Start()
     {
         this.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -26,7 +23,6 @@ public class Blueprint : MonoBehaviour
     {  
         if (BuildManager.buildMode)
         {
-            soundPlayer.PlayOneShot(build);
             newSprite = BuildManager.instance.GetTowerToBuild().GetComponentInChildren<SpriteRenderer>().sprite;
             towerRange = BuildManager.instance.GetTowerToBuild().GetComponent<turret>().range;
             this.GetComponent<SpriteRenderer>().sprite = newSprite;

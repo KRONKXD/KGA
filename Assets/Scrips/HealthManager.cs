@@ -11,18 +11,18 @@ public class HealthManager : MonoBehaviour
     public UIDocument activeUI;
     static UIDocument inGameUI;
     static int currentHealth;
-    static int enimyNumber = EnemySpawn.GetNumberOfEnemies();
-    //public static int diedEnemyNumber = Enemy.GetNumberOfEnemiesDied();
-    public static int diedEnemyNumber = 0;
-    //enimyNumber=enimyNumber+3;
-    //static int x = 0;
+
+    //audio reikalai
+    public AudioSource soundPlayer;
+    public AudioClip loseHealth;
+    static AudioSource statSoundPlayer;
+    static AudioClip statLoseHealth;
 
     public static void TakeDamage(int damage)
     {
         currentHealth -= damage;
         inGameUI.GetComponent<UI_script>().UpdateHealth();
-        diedEnemyNumber++;
-        //x++;
+        statSoundPlayer.PlayOneShot(statLoseHealth);
     }
 
     public static int GetHealthAmount() 
@@ -36,35 +36,13 @@ public class HealthManager : MonoBehaviour
         currentHealth = startingHealth;
         inGameUI = activeUI;
         inGameUI.GetComponent<UI_script>().UpdateHealth();
+        statSoundPlayer = soundPlayer;
+        statLoseHealth = loseHealth;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (diedEnemyNumber > 25 && currentHealth > 0)
-        {
-            SceneManager.LoadScene("Win");
-        }
-
-        if (currentHealth <= 0)
-        {
-            //inGameUI = activeUI;
-            //inGameUI.GetComponent<UI_script>().CompletedLevel();
-            //inGameUI.GetComponent<UI_script>().EndGame();
-            SceneManager.LoadScene("Lose");
-        }
-
-    }
-    //static int enimyNumber = EnemySpawn.GetNumberOfEnemies();
-    //public int diedEnemyNumber = Enemy.GetNumberOfEnemiesDied();
-
-    public static void OnTriggerEnter()
-    {
-        //int health = inGameUI.GetComponent<UI_script>().UpdateHealth();
-        // int currentHealth = HealthManager.GetHealthAmount();
-
+    //void Update()
+    //{
         
-        
-        //activeUI.CompletedLevel();
-    }
+    //}
 }

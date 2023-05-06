@@ -2086,8 +2086,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newSprite: {fileID: -688877436, guid: da8756a22e41d0d419cf9ff551693398, type: 3}
   buildingRange: {fileID: 2033724413}
-  soundPlayer: {fileID: 0}
-  build: {fileID: 0}
 --- !u!4 &405273664
 Transform:
   m_ObjectHideFlags: 0
@@ -2465,6 +2463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   activeUI: {fileID: 1694577134}
+  loseHealth: {fileID: 0}
 --- !u!114 &589642058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3631,6 +3630,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1410946557}
     - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
+      propertyPath: waves.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
       propertyPath: enemyPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 5500219951871402607, guid: fdb38fdb9faa5f04895ccb92ad3173c8, type: 3}
@@ -3650,6 +3653,10 @@ PrefabInstance:
       propertyPath: enemyPrefabs.Array.data[4]
       value: 
       objectReference: {fileID: 8957190141870010538, guid: 794c5723466bb084f91ea1ec3e106785, type: 3}
+    - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
+      propertyPath: waves.Array.data[0].enemyType.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
 --- !u!1 &1184429666
@@ -5989,14 +5996,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50156d4ed99d2d438dc88debc2943a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundPlayer: {fileID: 1224635786}
-  build: {fileID: 8300000, guid: cd469292a436b54458eacc97183fc0c8, type: 3}
-  loseHealth: {fileID: 8300000, guid: d35e71067f7c0544ab189a0ae27a87ad, type: 3}
+  towers4sale: []
   paused_Menu: {fileID: 1028068128}
-  buy1_Tower: {fileID: 4379562713138773979, guid: 2fc6b7c356f8e0d4e83ac375e70638f5, type: 3}
-  buy2_Tower: {fileID: 6891754642554617626, guid: 5a161d466fdffe44788dd5b82f4120b7, type: 3}
-  buy3_Tower: {fileID: 4379562713138773979, guid: a56cf2ca116d3d045915d2047f870029, type: 3}
-  restartDelay: 1
 --- !u!1001 &1712864991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8477,6 +8478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a66cfc93b479b34dbd0f861528269cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  build: {fileID: 0}
 --- !u!19719996 &1988573792
 TilemapCollider2D:
   m_ObjectHideFlags: 0

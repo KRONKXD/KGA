@@ -9,54 +9,51 @@ public class Wave
     private string waveName;
     public int numberOfEnemies;
     public GameObject[] enemyType;
+    public float spawnInterval;
 }
 public class EnemySpawn : MonoBehaviour
 {
-    [SerializeField] private float spawnRate=1f;
-    [SerializeField] private GameObject[] enemyPrefabs;
-    [SerializeField] private bool canSpawn = true;
-
     public waypoints waypoint = null;
-
-    [SerializeField] private Wave[] waves;
+    public Wave[] waves;
+    public Transform[] spawnPoints;
+    private Wave currentWave;
     private int currentWaveNumber;
-
-
-    static int numberOfEnemies;
+    public float nextSpawnTime;
+    private bool canSpawn = true;
+    
     
     // Start is called before the first frame update
     void Start()
     {
-        numberOfEnemies++;
-        StartCoroutine(Spawner());
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject[] totalenemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (totalenemies.Length == 0 && !canSpawn)
+        currentWave = waves[currentWaveNumber];
+        SpawnWave();
+        GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber + 1 != waves.Length)
         {
             currentWaveNumber++;
+            canSpawn = true;
         }
     }
 
-    private IEnumerator Spawner()
+    void SpawnWave()
     {
-        WaitForSeconds wait = new WaitForSeconds(spawnRate);
-        while (canSpawn)
+        if (canSpawn && nextSpawnTime < Time.time)
         {
-            yield return wait;
-            int random = Random.Range(0, enemyPrefabs.Length);
-            GameObject enemyToSpawn = enemyPrefabs[random];
-            GameObject enemy = Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
-            numberOfEnemies++;
-            enemy.GetComponent<Enemy>().waypoint = waypoint;
+            GameObject randomEnemy = currentWave.enemyType[Random.Range(0, currentWave.enemyType.Length)];
+            Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            Instantiate(randomEnemy, randomPoint.position, Quaternion.identity);
+            currentWave.numberOfEnemies--;
+            nextSpawnTime = Time.time + currentWave.spawnInterval;
+            if (currentWave.numberOfEnemies == 0)
+            {
+                canSpawn = false;
+            }
         }
-    }
-
-    public static int GetNumberOfEnemies()
-    {
-        return numberOfEnemies;
     }
 }

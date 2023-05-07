@@ -13,6 +13,9 @@ public class Wave
 }
 public class EnemySpawn : MonoBehaviour
 {
+   // [SerializeField] private Difficulty difficulty;
+    public GameObject enemyPrefab;
+   // public MainMenu difficultySelector;
     public waypoints waypoint = null;
     public Wave[] waves;
     public Transform[] spawnPoints;
@@ -43,6 +46,11 @@ public class EnemySpawn : MonoBehaviour
 
     void SpawnWave()
     {
+        GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        enemy.transform.SetParent(transform); 
+        Enemy enemyComponent = enemy.GetComponentInChildren<Enemy>();
+       // enemyComponent.difficultySelector = difficulty.Value; 
+        enemyComponent.SetEnemyProperties(); 
         if (canSpawn && nextSpawnTime < Time.time)
         {
             GameObject randomEnemy = currentWave.enemyType[Random.Range(0, currentWave.enemyType.Length)];

@@ -7,6 +7,7 @@ public class Sound : MonoBehaviour
     public AudioSource soundPlayer;
     public AudioClip hoverFx;
     public AudioClip clickFx;
+    [SerializeField] private Difficulty difficulty;
 
     public void HoverSound()
     {

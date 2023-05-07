@@ -7,6 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Difficulty.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -68,7 +71,9 @@
       <workItem from="1680399232718" duration="8827000" />
       <workItem from="1682276796518" duration="5256000" />
       <workItem from="1682497039418" duration="4154000" />
-      <workItem from="1683403366041" duration="2365000" />
+      <workItem from="1683403366041" duration="3755000" />
+      <workItem from="1683418490456" duration="5941000" />
+      <workItem from="1683474889586" duration="5835000" />
     </task>
     <servers />
   </component>

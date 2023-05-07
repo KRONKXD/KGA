@@ -508,6 +508,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 47873415}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!1 &49313316
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +612,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 49313320}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &49313320
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1409,6 +1411,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 229706750}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &229706750
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2444,6 +2447,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1057825376}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1057825376
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2636,17 +2640,17 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Hard
+          m_StringArgument: Easy
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
-        m_MethodName: playButtonSoundEfect
-        m_Mode: 1
+      - m_Target: {fileID: 1422358376}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SetDifficulty
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2749,6 +2753,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1069944104}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1069944104
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3130,6 +3135,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1253163781}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1253163781
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3280,7 +3286,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 0}
   volumeTextUI: {fileID: 0}
-  DifficultyToggles: {fileID: 889964159}
+  difficulty: {fileID: 11400000, guid: b02ba26599226c748b33bc03e2929f20, type: 2}
+  selectedDifficulty: 0
 --- !u!1 &1438401658
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,6 +3561,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1529041566}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1529041566
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4117,10 +4125,10 @@ MonoBehaviour:
           m_StringArgument: Easy
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
-        m_MethodName: playButtonSoundEfect
-        m_Mode: 1
+      - m_Target: {fileID: 1422358376}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SetDifficulty
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4323,6 +4331,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1925898009}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!1 &1936302631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4419,17 +4428,17 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Medium
+          m_StringArgument: Easy
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
-        m_MethodName: playButtonSoundEfect
-        m_Mode: 1
+      - m_Target: {fileID: 1422358376}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SetDifficulty
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4532,6 +4541,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1936302638}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1936302638
 AudioSource:
   m_ObjectHideFlags: 0

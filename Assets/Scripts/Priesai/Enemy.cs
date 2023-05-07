@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,16 +10,29 @@ public class Enemy : MonoBehaviour
     //public GameObject soundPlayer;
     public AudioClip deadSound;
 
+    [SerializeField] private Difficulty difficulty;
+    //public int difficultySelector=4;
     public EnemySpawn enemySpawn;
-
-    public float speed = 2f;
-    public int bounty = 60;
+   // public MainMenu difficultySelector;
+    public float easySpeed = 20f;
+    public float mediumSpeed = 4f;
+    public float hardSpeed = 1f;
+    public int easyDamage = 10;
+    public int mediumDamage = 20;
+    public int hardDamage = 30;
+    public int easyMaxHealth = 50;
+    public int mediumMaxHealth = 100;
+    public int hardMaxHealth = 150;
+    
+    
 
     private Transform target;
     private int waypointIndex = 0;
-    public int maxHealth = 100;
-    public int health = 100;
-    public int damage = 1;
+    public int bounty = 60;
+    public float speed;
+    public int maxHealth ;
+    public int health;
+    public int damage;
     private int currentHealth;
     public HealthBar healthBar;
     public waypoints waypoint = null;
@@ -48,7 +62,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetEnemyProperties();
         if (!minion && !revived)
         {
             target = waypoint.points[0];
@@ -111,7 +125,32 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+    public void SetEnemyProperties() {
+        switch (difficulty.Value) {
+            case 0:
+                speed = easySpeed;
+                damage = easyDamage;
+                maxHealth = easyMaxHealth;
+                health = maxHealth;
+                break;
+            case 1:
+                speed = mediumSpeed;
+                damage = mediumDamage;
+                maxHealth = mediumMaxHealth;
+                health = maxHealth;
+                break;
+            case 2:
+                speed = hardSpeed;
+                damage = hardDamage;
+                maxHealth = hardMaxHealth;
+                health = maxHealth;
+                break;
 
+            default:
+                Debug.LogError("Invalid Difficulty");
+                throw new ArgumentOutOfRangeException();
+        }
+    }
     public void TakeDamage(int damage)
     {
         health -= damage;

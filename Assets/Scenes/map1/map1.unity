@@ -443,6 +443,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4388912635301130743, guid: 4a42895a7b9c413499f941ea08a86fd5, type: 3}
   m_PrefabInstance: {fileID: 205274727}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &272572683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272572685}
+  - component: {fileID: 272572684}
+  m_Layer: 0
+  m_Name: Difficulty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &272572684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272572683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780d58f13a2aa8d4183bbaca84fb176a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 0}
+  volumeTextUI: {fileID: 0}
+  difficulty: {fileID: 11400000, guid: b02ba26599226c748b33bc03e2929f20, type: 2}
+--- !u!4 &272572685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272572683}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.2548423, y: 2.137301, z: -2.5438197}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &300536209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1613,6 +1660,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 385318013}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!114 &385318015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2242,12 +2290,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1410946557}
     - target: {fileID: 5500219951871402604, guid: fdb38fdb9faa5f04895ccb92ad3173c8, type: 3}
+      propertyPath: difficulty
+      value: 
+      objectReference: {fileID: 11400000, guid: b02ba26599226c748b33bc03e2929f20, type: 2}
+    - target: {fileID: 5500219951871402604, guid: fdb38fdb9faa5f04895ccb92ad3173c8, type: 3}
       propertyPath: enemySpawn
       value: 
       objectReference: {fileID: 1789254317}
     - target: {fileID: 5500219951871402604, guid: fdb38fdb9faa5f04895ccb92ad3173c8, type: 3}
       propertyPath: soundPlayer
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500219951871402604, guid: fdb38fdb9faa5f04895ccb92ad3173c8, type: 3}
+      propertyPath: difficultySelector
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5500219951871402607, guid: fdb38fdb9faa5f04895ccb92ad3173c8, type: 3}
       propertyPath: m_Name
@@ -2903,6 +2959,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 821222185}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &821222185
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3162,9 +3219,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1410946557}
     - target: {fileID: 353317566192387588, guid: 5d3f40975fc0d5943917d2ce62ecbe05, type: 3}
+      propertyPath: difficulty
+      value: 
+      objectReference: {fileID: 11400000, guid: b02ba26599226c748b33bc03e2929f20, type: 2}
+    - target: {fileID: 353317566192387588, guid: 5d3f40975fc0d5943917d2ce62ecbe05, type: 3}
       propertyPath: enemySpawn
       value: 
       objectReference: {fileID: 1789254317}
+    - target: {fileID: 353317566192387588, guid: 5d3f40975fc0d5943917d2ce62ecbe05, type: 3}
+      propertyPath: difficultySelector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 353317566192387591, guid: 5d3f40975fc0d5943917d2ce62ecbe05, type: 3}
       propertyPath: m_Name
       value: slime_enemy
@@ -3235,9 +3300,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1410946557}
     - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
+      propertyPath: difficulty
+      value: 
+      objectReference: {fileID: 11400000, guid: b02ba26599226c748b33bc03e2929f20, type: 2}
+    - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 1242807535}
+    - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
       propertyPath: waves.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
+      propertyPath: difficultySelector
+      value: 
+      objectReference: {fileID: 272572684}
     - target: {fileID: 7536714364435557903, guid: 37d55eda7a31eef4b9edda7e36236754, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 1
@@ -3833,9 +3910,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1410946557}
     - target: {fileID: 5324755268858855252, guid: d70d2fd3c64302a4b9fb1bc5d3d9af31, type: 3}
+      propertyPath: difficulty
+      value: 
+      objectReference: {fileID: 11400000, guid: b02ba26599226c748b33bc03e2929f20, type: 2}
+    - target: {fileID: 5324755268858855252, guid: d70d2fd3c64302a4b9fb1bc5d3d9af31, type: 3}
       propertyPath: enemySpawn
       value: 
       objectReference: {fileID: 1789254317}
+    - target: {fileID: 5324755268858855252, guid: d70d2fd3c64302a4b9fb1bc5d3d9af31, type: 3}
+      propertyPath: difficultySelector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5324755268858855255, guid: d70d2fd3c64302a4b9fb1bc5d3d9af31, type: 3}
       propertyPath: m_Name
       value: slime_enemy_minion
@@ -5173,9 +5258,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1410946557}
     - target: {fileID: 8998764151042120938, guid: 794c5723466bb084f91ea1ec3e106785, type: 3}
+      propertyPath: difficulty
+      value: 
+      objectReference: {fileID: 11400000, guid: b02ba26599226c748b33bc03e2929f20, type: 2}
+    - target: {fileID: 8998764151042120938, guid: 794c5723466bb084f91ea1ec3e106785, type: 3}
       propertyPath: enemySpawn
       value: 
       objectReference: {fileID: 1789254317}
+    - target: {fileID: 8998764151042120938, guid: 794c5723466bb084f91ea1ec3e106785, type: 3}
+      propertyPath: difficultySelector
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 794c5723466bb084f91ea1ec3e106785, type: 3}
 --- !u!1 &1306617065
@@ -5774,6 +5867,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1413895108}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1413895108
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6161,6 +6255,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1474294758}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1474294758
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6454,6 +6549,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1495587328}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1495587328
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6789,6 +6885,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1676076313}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1676076313
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10041,6 +10138,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 2055125725}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!1001 &1421563877686154918
 PrefabInstance:
   m_ObjectHideFlags: 0

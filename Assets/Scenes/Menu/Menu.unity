@@ -1777,7 +1777,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 021479fd764e70f45bead6eec6beac18, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3287,7 +3287,6 @@ MonoBehaviour:
   volumeSlider: {fileID: 0}
   volumeTextUI: {fileID: 0}
   difficulty: {fileID: 11400000, guid: b02ba26599226c748b33bc03e2929f20, type: 2}
-  selectedDifficulty: 0
 --- !u!1 &1438401658
 GameObject:
   m_ObjectHideFlags: 0

@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 8300000, guid: 2983d4b19ab49f94fb8bdb467ca6966d, type: 3}
-  range: 3
+  range: 0
   fireRate: 2
   price: 100
   moneyGenerator: 1
@@ -143,7 +143,6 @@ MonoBehaviour:
   partToRotate: {fileID: 4379562713237676013}
   bulletPrefab: {fileID: -3050844872919590641, guid: e16d49ad7507d3b47a58ea68520044bc, type: 3}
   firePoint: {fileID: 4379562713237676013}
-  damage: 30
 --- !u!61 &533587985
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,7 +156,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.125}
+  m_Offset: {x: 0, y: -0.065}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -168,7 +167,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.75}
+  m_Size: {x: 0.88, y: 0.75}
   m_EdgeRadius: 0
 --- !u!1 &4379562713237676012
 GameObject:

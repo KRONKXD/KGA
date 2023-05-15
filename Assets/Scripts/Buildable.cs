@@ -53,6 +53,7 @@ public class Buildable : MonoBehaviour
                 GameObject towerToBuild = BuildManager.instance.GetTowerToBuild();
                 Instantiate(towerToBuild, BuildManager.worldPos, transform.rotation);
                 BuildManager.buildMode = false;
+                Blueprint.instance.Deselect();
                 MoneyManager.CurrentMoney -= towerToBuild.GetComponent<turret>().GetTowerPrice();
             }
         }

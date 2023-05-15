@@ -37,6 +37,7 @@ public class BuildManager : MonoBehaviour
             transform.position = worldPos;
             if (Input.GetMouseButton(1))
             {
+                Blueprint.instance.Deselect();
                 buildMode = false;
             }
         }
@@ -57,6 +58,7 @@ public class BuildManager : MonoBehaviour
                     {
                         Debug.Log("Sold!");
                         MoneyManager.CurrentMoney += a.gameObject.GetComponent<turret>().GetTowerPrice() / 2;
+                        Blueprint.instance.Deselect();
                         Destroy(a.gameObject);
                     }
                 }

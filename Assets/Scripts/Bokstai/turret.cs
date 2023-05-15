@@ -36,8 +36,10 @@ public class  turret : MonoBehaviour
     public Bullet bulletPrefab;
     public Transform firePoint;
 
-    public int damage = 40;
-    
+    //[Header("Seletion")]
+    //public GameObject bp;
+    //public int damage = 40;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -141,5 +143,17 @@ public class  turret : MonoBehaviour
         //Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         moneyEffect.GetComponent<ParticleSystem>().Play();
 
+    }
+
+    private void OnMouseEnter()
+    { 
+        GetComponentInChildren<SpriteRenderer>().material.color = Color.red;
+        Blueprint.instance.Select(this.gameObject);
+    }
+
+    private void OnMouseExit()
+    {
+        GetComponentInChildren<SpriteRenderer>().material.color = Color.white;
+        Blueprint.instance.GetComponent<Blueprint>().Deselect();
     }
 }

@@ -99,10 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87191523189736c438822493d29ba321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
   damage: 0
   explosiveRange: 0
   freezeTime: 1.2
+  notification: 0
   impactEffect: {fileID: 5121981613295269313, guid: 218d2297ccc26034e82276a39d5e988a, type: 3}
 --- !u!58 &-2399782344454492020
 CircleCollider2D:

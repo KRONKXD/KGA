@@ -18,7 +18,7 @@ public class UI_script : MonoBehaviour
     private VisualElement root;
     public GameObject[] towers4sale;
     public bool[] unlocks;
-    public GameObject paused_Menu;
+    private GameObject Menus;
     //public GameObject buy1_Tower;
     //public GameObject buy2_Tower;
     //public GameObject buy3_Tower;
@@ -32,12 +32,17 @@ public class UI_script : MonoBehaviour
 
     private StyleColor oldColor;
     //private VisualElement root;
+
+    private void Awake()
+    {
+        Menus = GameObject.Find("Menus");
+    }
     private void OnEnable()
     {
         root = GetComponent<UIDocument>().rootVisualElement;
         Button buttonPause = root.Q<Button>("button_Pause");
 
-        PausedMenu pausedMenu = paused_Menu.GetComponent<PausedMenu>();
+        PausedMenu pausedMenu = Menus.GetComponent<PausedMenu>();
         buttonPause.clicked += () => pausedMenu.Pause();
 
         Button buttonBuy1 = root.Q<Button>("buy1");
@@ -228,6 +233,8 @@ public class UI_script : MonoBehaviour
         }
 
         demoMode = false;
+
+
     }
 
     private void UpdateMoney(int change)

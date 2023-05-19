@@ -19,6 +19,7 @@ public class EnemyFactory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         waypointsName = "Waypoints" + kurisWaypoints;
         //waves = WaveDatabase.instance.waves;
     }
@@ -28,9 +29,9 @@ public class EnemyFactory : MonoBehaviour
     {
         if (timer <= 0)
         {
-            if(waveIndex < waves.Length) 
+            if (waveIndex < waves.Length)
             {
-                if(waveEnded)
+                if (waveEnded)
                 {
                     waveEnded = false;
                     StartCoroutine(SpawnWave(waves[waveIndex]));
@@ -48,10 +49,10 @@ public class EnemyFactory : MonoBehaviour
                     Invoke("WinLevel", 5f);
                 }
             }
-            
+
         }
         timer -= Time.smoothDeltaTime;
-        
+
     }
 
     IEnumerator SpawnWave(Wave enemyWave)
@@ -74,6 +75,8 @@ public class EnemyFactory : MonoBehaviour
 
     void WinLevel()
     {
-        SceneManager.LoadScene("Win");
+        Time.timeScale = 0f;
+        GameObject.Find("Menus").transform.GetChild(3).gameObject.SetActive(true);
+        //SceneManager.LoadScene("Win");
     }
 }

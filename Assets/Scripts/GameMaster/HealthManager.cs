@@ -21,10 +21,17 @@ public class HealthManager : MonoBehaviour
     public static void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        if (currentHealth < 0)
+            currentHealth = 0;
         inGameUI.GetComponent<UI_script>().UpdateHealth();
         SFXManager.instance.PlaySound(statLoseHealth);
         if(currentHealth <= 0)
-            SceneManager.LoadScene("Lose");
+        {
+            Time.timeScale = 0f;
+            GameObject.Find("Menus").transform.GetChild(2).gameObject.SetActive(true);
+        }
+            
+        //SceneManager.LoadScene("Lose");
     }
 
     public static int GetHealthAmount() 

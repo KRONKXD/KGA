@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class PausedMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-    public GameObject pausedMenuUI;
+    private GameObject pausedMenuUI;
+    private void Start()
+    {
+        pausedMenuUI = this.transform.GetChild(0).gameObject;
+    }
 
     // Update is called once per frame
     void Update()
@@ -47,5 +51,16 @@ public class PausedMenu : MonoBehaviour
     {
         Debug.Log("Quitting game...");
         Application.Quit();
+    }
+
+    public void Retry()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

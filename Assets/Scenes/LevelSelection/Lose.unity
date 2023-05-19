@@ -361,6 +361,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 57600232}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &57600232
 AudioSource:
   m_ObjectHideFlags: 0
@@ -654,6 +655,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 74728546}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &74728546
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1121,6 +1123,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 107759995}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &107759995
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1566,6 +1569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 0}
   volumeTextUI: {fileID: 0}
+  difficulty: {fileID: 11400000, guid: b02ba26599226c748b33bc03e2929f20, type: 2}
 --- !u!4 &482694330
 Transform:
   m_ObjectHideFlags: 0
@@ -1938,6 +1942,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 899234749}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &899234749
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2137,6 +2142,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 902151244}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &902151244
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2558,6 +2564,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1030232276}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1030232276
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3309,6 +3316,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1197983404}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1197983404
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3977,6 +3985,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1461186825}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1461186825
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4270,6 +4279,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1557676691}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1557676691
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4563,6 +4573,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1581035233}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1581035233
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5140,6 +5151,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1695893664}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1695893664
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5433,6 +5445,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1728285045}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1728285045
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5806,6 +5819,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1735501242}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1735501242
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6382,6 +6396,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 1891687689}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &1891687689
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6945,6 +6960,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 2066197901}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &2066197901
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7238,6 +7254,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 2090720157}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &2090720157
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7531,6 +7548,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 2132516158}
   hoverFx: {fileID: 8300000, guid: d952e29ed5484ab429fbbb72887473f4, type: 3}
   clickFx: {fileID: 8300000, guid: 6e2929ae9312ba743b6ba9a1a5aa489b, type: 3}
+  difficulty: {fileID: 0}
 --- !u!82 &2132516158
 AudioSource:
   m_ObjectHideFlags: 0

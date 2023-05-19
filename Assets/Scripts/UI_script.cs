@@ -271,7 +271,7 @@ public class UI_script : MonoBehaviour
         }
         //VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         Label wave = root.Q<Label>("wave");
-        wave.text = "x " + WinLoseManager.deadEnemyNumber + " / " + WinLoseManager.reqEN;
+        //wave.text = "x " + WinLoseManager.deadEnemyNumber + " / " + WinLoseManager.reqEN;
     }
 
     public void UpdateHealth()

@@ -12,28 +12,30 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private Difficulty difficulty;
     //public int difficultySelector=4;
-    public EnemySpawn enemySpawn;
-   // public MainMenu difficultySelector;
-    public float easySpeed = 20f;
-    public float mediumSpeed = 4f;
-    public float hardSpeed = 1f;
-    public int easyDamage = 10;
-    public int mediumDamage = 20;
-    public int hardDamage = 30;
-    public int easyMaxHealth = 50;
-    public int mediumMaxHealth = 100;
-    public int hardMaxHealth = 150;
-    
+    //public EnemySpawn enemySpawn;
+    // public MainMenu difficultySelector;
+    //public float easySpeed = 20f;
+    //public float mediumSpeed = 4f;
+    //public float hardSpeed = 1f;
+    //public int easyDamage = 10;
+    //public int mediumDamage = 20;
+    //public int hardDamage = 30;
+    //public int easyMaxHealth = 50;
+    //public int mediumMaxHealth = 100;
+    //public int hardMaxHealth = 150;
+    private float easyMod = 0.75f;
+    private float mediumMod = 1f;
+    private float hardMod = 1.4f;
     
 
     private Transform target;
     private int waypointIndex = 0;
     public int bounty = 60;
     public float speed;
-    public int maxHealth ;
+    public int maxHealth;
     public int health;
     public int damage;
-    private int currentHealth;
+    private float currentHealth;
     public HealthBar healthBar;
     public waypoints waypoint = null;
 
@@ -59,12 +61,15 @@ public class Enemy : MonoBehaviour
     private bool revived = false;
     private Animator mAnimator;
 
-    // Start is called before the first frame update
+        // Start is called before the first frame update
     void Start()
     {
-        SetEnemyProperties();
+        //SetEnemyProperties();
+        SetDifficultyStats();
         if (!minion && !revived)
         {
+            // waypoint = GameObject.Find("Waypoints").GetComponent<waypoints>();
+            //Debug.Log("waypoint sk.: " + waypoint.points.Length);
             target = waypoint.points[0];
         }
         currentHealth = maxHealth;
@@ -125,25 +130,28 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-    public void SetEnemyProperties() {
-        switch (difficulty.Value) {
+
+    private void SetDifficultyStats()
+    {
+        switch (difficulty.Value)
+        {
             case 0:
-                speed = easySpeed;
-                damage = easyDamage;
-                maxHealth = easyMaxHealth;
-                health = maxHealth;
+                speed *= easyMod;
+                damage = (int)(damage * easyMod);
+                maxHealth = (int)(maxHealth * easyMod);
+                health = (int)(health * easyMod);
                 break;
             case 1:
-                speed = mediumSpeed;
-                damage = mediumDamage;
-                maxHealth = mediumMaxHealth;
-                health = maxHealth;
+                speed *= mediumMod;
+                damage = (int)(damage * mediumMod);
+                maxHealth = (int)(maxHealth * mediumMod);
+                health = (int)(health * mediumMod);
                 break;
             case 2:
-                speed = hardSpeed;
-                damage = hardDamage;
-                maxHealth = hardMaxHealth;
-                health = maxHealth;
+                speed *= hardMod;
+                damage = (int)(damage * hardMod);
+                maxHealth = (int)(maxHealth * hardMod);
+                health = (int)(health * hardMod);
                 break;
 
             default:
@@ -151,7 +159,34 @@ public class Enemy : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
-    public void TakeDamage(int damage)
+
+        //public void SetEnemyProperties() {
+        //    switch (difficulty.Value) {
+        //        case 0:
+        //            speed = easySpeed;
+        //            damage = easyDamage;
+        //            maxHealth = easyMaxHealth;
+        //            health = maxHealth;
+        //            break;
+        //        case 1:
+        //            speed = mediumSpeed;
+        //            damage = mediumDamage;
+        //            maxHealth = mediumMaxHealth;
+        //            health = maxHealth;
+        //            break;
+        //        case 2:
+        //            speed = hardSpeed;
+        //            damage = hardDamage;
+        //            maxHealth = hardMaxHealth;
+        //            health = maxHealth;
+        //            break;
+
+        //        default:
+        //            Debug.LogError("Invalid Difficulty");
+        //            throw new ArgumentOutOfRangeException();
+        //    }
+        //}
+        public void TakeDamage(int damage)
     {
         health -= damage;
         healthBar.SetHealth(health);
@@ -168,7 +203,7 @@ public class Enemy : MonoBehaviour
         MoneyManager.CurrentMoney += bounty;
         if (!minion && !revived)
         {
-            WinLoseManager.deadEnemyNumber++;
+            //WinLoseManager.deadEnemyNumber++;
             GameObject copy = Instantiate(this.gameObject, transform.position, transform.rotation);
             copy.GetComponent<Enemy>().setWaypoint(target, waypointIndex);
             copy.GetComponent<Enemy>().waypoint = waypoint;

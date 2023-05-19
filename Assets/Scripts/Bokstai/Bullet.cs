@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
     {
         if (hit)
             return;
-        if(collision.gameObject.tag != "Bullet")
+        if(collision.gameObject.tag != "Bullet" && collision.gameObject.tag != "Tower" && collision.gameObject.tag != "Grass")
         {
             hit = true;
             Destroy(gameObject);

@@ -4,7 +4,7 @@ using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
 [System.Serializable]
-public class Wave
+public class WaveOld
 {
     private string waveName;
     public int numberOfEnemies;
@@ -17,9 +17,9 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemyPrefab;
    // public MainMenu difficultySelector;
     public waypoints waypoint = null;
-    public Wave[] waves;
+    public WaveOld[] waves;
     public Transform[] spawnPoints;
-    private Wave currentWave;
+    private WaveOld currentWave;
     private int currentWaveNumber;
     public float nextSpawnTime;
     private bool canSpawn = true;
@@ -50,7 +50,7 @@ public class EnemySpawn : MonoBehaviour
         enemy.transform.SetParent(transform); 
         Enemy enemyComponent = enemy.GetComponentInChildren<Enemy>();
        // enemyComponent.difficultySelector = difficulty.Value; 
-        enemyComponent.SetEnemyProperties(); 
+        //enemyComponent.SetEnemyProperties(); 
         if (canSpawn && nextSpawnTime < Time.time)
         {
             GameObject randomEnemy = currentWave.enemyType[Random.Range(0, currentWave.enemyType.Length)];

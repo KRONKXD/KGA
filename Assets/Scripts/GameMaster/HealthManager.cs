@@ -23,6 +23,8 @@ public class HealthManager : MonoBehaviour
         currentHealth -= damage;
         inGameUI.GetComponent<UI_script>().UpdateHealth();
         SFXManager.instance.PlaySound(statLoseHealth);
+        if(currentHealth <= 0)
+            SceneManager.LoadScene("Lose");
     }
 
     public static int GetHealthAmount() 

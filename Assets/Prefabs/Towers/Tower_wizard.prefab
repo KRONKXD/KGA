@@ -134,7 +134,7 @@ MonoBehaviour:
   shot: {fileID: 8300000, guid: 2983d4b19ab49f94fb8bdb467ca6966d, type: 3}
   range: 3
   fireRate: 2
-  price: 100
+  price: 200
   moneyGenerator: 0
   moneyAmount: 0
   moneyRate: 0

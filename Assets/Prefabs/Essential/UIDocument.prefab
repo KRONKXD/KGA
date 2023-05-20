@@ -66,5 +66,5 @@ MonoBehaviour:
   - {fileID: 6891754642554617626, guid: 5a161d466fdffe44788dd5b82f4120b7, type: 3}
   - {fileID: 4379562713138773979, guid: a56cf2ca116d3d045915d2047f870029, type: 3}
   - {fileID: 4379562713138773979, guid: ae3747f95a21df14da05b56e3bde7d6b, type: 3}
-  unlocks: 01010000
-  paused_Menu: {fileID: 0}
+  - {fileID: 4379562713138773979, guid: cc6659058248c674dbf92287f292bf44, type: 3}
+  unlocks: 0101000000

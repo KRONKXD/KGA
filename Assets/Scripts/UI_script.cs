@@ -27,6 +27,7 @@ public class UI_script : MonoBehaviour
     private int price2Tower;
     private int price3Tower;
     private int price4Tower;
+    private int price5Tower;
     private int storedMoney;
     private bool demoMode;
 
@@ -181,6 +182,40 @@ public class UI_script : MonoBehaviour
             }
         };
 
+        Button buttonBuy5 = root.Q<Button>("buy5");
+        buttonBuy5.clicked += () =>
+        {
+            if (unlocks[4])
+            {
+                if (BuildManager.demoMode)
+                {
+                    ToggleDemolishMode();
+                }
+                if (MoneyManager.CurrentMoney >= price5Tower)
+                {
+                    //soundPlayer.PlayOneShot(build);
+                    BuildManager.instance.SetTowerToBuild(towers4sale[4]);
+                    BuildManager.buildMode = true;
+                }
+                else
+                {
+                    Debug.Log("u broke lol");
+                }
+            }
+            else
+            {
+                if (MoneyManager.CurrentMoney >= price5Tower * 2)
+                {
+                    UpdateMoney(price5Tower * 2);
+                    Unlock(buttonBuy5, root.Q<Label>("price5"), 4);
+                }
+                else
+                {
+                    Debug.Log("u broke lol");
+                }
+            }
+        };
+
         Button buttonDemo = root.Q<Button>("demolish");
         buttonDemo.clicked += () =>
         {
@@ -196,41 +231,72 @@ public class UI_script : MonoBehaviour
         price2Tower = towers4sale[1].GetComponent<turret>().GetTowerPrice();
         price3Tower = towers4sale[2].GetComponent<turret>().GetTowerPrice();
         price4Tower = towers4sale[3].GetComponent<turret>().GetTowerPrice();
-        UpdateMoney(0);
+        price5Tower = towers4sale[4].GetComponent<turret>().GetTowerPrice();
+        
         //root = GetComponent<UIDocument>().rootVisualElement;
-        oldColor = root.Q<Button>().style.backgroundColor;
+        //oldColor = root.Q<Button>().style.backgroundColor;
         root.Q<Label>("price1").text = price1Tower + " G";
         root.Q<Label>("price2").text = price2Tower + " G";
         root.Q<Label>("price3").text = price3Tower + " G";
         root.Q<Label>("price4").text = price4Tower + " G";
+        root.Q<Label>("price5").text = price5Tower + " G";
 
         if (!unlocks[0])
         {
             root.Q<Button>("buy1").text = "Unlock";
-            root.Q<Button>("buy1").style.backgroundColor = Color.red;
+           // root.Q<Button>("buy1").style.backgroundColor = Color.red;
             root.Q<Label>("price1").text = price1Tower * 2 + " G";
+        }
+        else
+        {
+            root.Q<VisualElement>("display1").style.backgroundImage = new StyleBackground(towers4sale[0].GetComponentInChildren<SpriteRenderer>().sprite);
         }
 
         if (!unlocks[1])
         {
             root.Q<Button>("buy2").text = "Unlock";
-            root.Q<Button>("buy2").style.backgroundColor = Color.red;
+            //root.Q<Button>("buy2").style.backgroundColor = Color.red;
             root.Q<Label>("price2").text = price2Tower * 2 + " G";
+        }
+        else
+        {
+            root.Q<VisualElement>("display2").style.backgroundImage = new StyleBackground(towers4sale[1].GetComponentInChildren<SpriteRenderer>().sprite);
         }
 
         if (!unlocks[2])
         {
             root.Q<Button>("buy3").text = "Unlock";
-            root.Q<Button>("buy3").style.backgroundColor = Color.red;
+            //root.Q<Button>("buy3").style.backgroundColor = Color.red;
             root.Q<Label>("price3").text = price3Tower * 2 + " G";
+        }
+        else
+        {
+            root.Q<VisualElement>("display3").style.backgroundImage = new StyleBackground(towers4sale[2].GetComponentInChildren<SpriteRenderer>().sprite);
         }
 
         if (!unlocks[3])
         {
             root.Q<Button>("buy4").text = "Unlock";
-            root.Q<Button>("buy4").style.backgroundColor = Color.red;
+            //root.Q<Button>("buy4").style.backgroundColor = Color.red;
             root.Q<Label>("price4").text = price4Tower * 2 + " G";
         }
+        else
+        {
+            root.Q<VisualElement>("display4").style.backgroundImage = new StyleBackground(towers4sale[3].GetComponentInChildren<SpriteRenderer>().sprite);
+        }
+
+        if (!unlocks[4])
+        {
+            root.Q<Button>("buy5").text = "Unlock";
+            //root.Q<Button>("buy5").style.backgroundColor = Color.red;
+            root.Q<Label>("price5").text = price5Tower * 2 + " G";
+        }
+        else
+        {
+            root.Q<VisualElement>("display5").style.backgroundImage = new StyleBackground(towers4sale[4].GetComponentInChildren<SpriteRenderer>().sprite);
+        }
+
+        UpdateMoney(0);
 
         demoMode = false;
 
@@ -244,6 +310,28 @@ public class UI_script : MonoBehaviour
         MoneyManager.CurrentMoney -= change;
         storedMoney = MoneyManager.CurrentMoney;
         moneyLabel.text = moneyLabel.text.Substring(0, 2) + MoneyManager.CurrentMoney;
+        CheckPrices();
+    }
+
+    private void CheckPrices()
+    {
+        string price;
+        int numPrice;
+        for(int i = 1; i <= towers4sale.Length; i++) 
+        {
+            price = root.Q<Label>("price" + i).text;
+            price = price.Trim('G', '$');
+            //Debug.Log(price);
+            numPrice = int.Parse(price);
+            if (numPrice <= storedMoney)
+            {
+                root.Q<Button>("buy" + i).style.backgroundColor = Color.green;
+            }
+            else
+            {
+                root.Q<Button>("buy" + i).style.backgroundColor = Color.red;
+            }
+        }
     }
 
     private void ToggleDemolishMode()
@@ -294,46 +382,31 @@ public class UI_script : MonoBehaviour
     {
         unlocks[index] = true;
         button.text = "Buy";
-        button.style.backgroundColor = oldColor;
+        //button.style.backgroundColor = oldColor;
         //price.text = price1Tower + " G";
         switch (index)
         {
             case (0):
                 price.text = price1Tower + " G";
+                root.Q<VisualElement>("display1").style.backgroundImage = new StyleBackground(towers4sale[0].GetComponentInChildren<SpriteRenderer>().sprite);
                 break;
             case (1):
                 price.text = price2Tower + " G";
+                root.Q<VisualElement>("display2").style.backgroundImage = new StyleBackground(towers4sale[1].GetComponentInChildren<SpriteRenderer>().sprite);
                 break;
             case (2):
                 price.text = price3Tower + " G";
+                root.Q<VisualElement>("display3").style.backgroundImage = new StyleBackground(towers4sale[2].GetComponentInChildren<SpriteRenderer>().sprite);
                 break;
             case (3):
                 price.text = price4Tower + " G";
+                root.Q<VisualElement>("display4").style.backgroundImage = new StyleBackground(towers4sale[3].GetComponentInChildren<SpriteRenderer>().sprite);
+                break;
+            case (4):
+                price.text = price5Tower + " G";
+                root.Q<VisualElement>("display5").style.backgroundImage = new StyleBackground(towers4sale[4].GetComponentInChildren<SpriteRenderer>().sprite);
                 break;
         }
-    }
-
-    //bool gameHasEnded = false;
-    //public float restartDelay = 1f;
-
-    //public void CompletedLevel()
-    //{
-    //    Debug.Log("LEVEL WON!");
-    //}
-
-    //public void EndGame()
-    //{
-    //    if (gameHasEnded == false)
-    //    {
-    //        gameHasEnded = true;
-    //        Debug.Log("GAME OVER");
-    //        Invoke("Restart", restartDelay);
-    //    }
-    //}
-
-    void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 

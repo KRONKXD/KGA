@@ -76,7 +76,7 @@ public class EnemyFactory : MonoBehaviour
     void WinLevel()
     {
         Time.timeScale = 0f;
-        GameObject.Find("Menus").transform.GetChild(3).gameObject.SetActive(true);
+        GameObject.Find("Menus").transform.GetChild(2).gameObject.SetActive(true);
         //SceneManager.LoadScene("Win");
     }
 }

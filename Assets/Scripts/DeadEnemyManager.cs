@@ -8,6 +8,7 @@ using UnityEngine;
 public class DeadEnemyManager : MonoBehaviour
 {
     private static Queue<GameObject> deadEnemies = new Queue<GameObject>();
+    [SerializeField] private Difficulty difficulty;
     // Start is called before the first frame update
     //void Start()
     //{

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Sound : MonoBehaviour
 {
-    public AudioSource soundPlayer;
+    private AudioSource soundPlayer;
     public AudioClip hoverFx;
     public AudioClip clickFx;
-    [SerializeField] private Difficulty difficulty;
+   // [SerializeField] private Difficulty difficulty;
 
     public void HoverSound()
     {
@@ -19,6 +19,7 @@ public class Sound : MonoBehaviour
     }
     public void Awake() 
     {
-        DontDestroyOnLoad(transform.gameObject);
+        soundPlayer = GameObject.Find("BackgroundAudio").GetComponent<AudioSource>();
+        //DontDestroyOnLoad(transform.gameObject);
     }
 }

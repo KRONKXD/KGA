@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PausedMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     private GameObject pausedMenuUI;
+    [SerializeField] private VolumeLevel volumeLevel;
     private void Start()
     {
         pausedMenuUI = this.transform.GetChild(0).gameObject;
+        GameObject.Find("BackgroundAudio").GetComponent<AudioSource>().volume = volumeLevel.volume;
+        GameObject.Find("GameMaster").GetComponent<AudioSource>().volume = volumeLevel.volume;
     }
 
     // Update is called once per frame
@@ -62,5 +66,18 @@ public class PausedMenu : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+
+    public void volumeSlide()
+    {
+        //volumeTextUI.text = volume.ToString("0.0");
+        volumeLevel.volume = GetComponentInChildren<Slider>().value;
+        GameObject.Find("BackgroundAudio").GetComponent<AudioSource>().volume = volumeLevel.volume;
+        GameObject.Find("GameMaster").GetComponent<AudioSource>().volume = volumeLevel.volume;
+    }
+
+    public void SetSlider()
+    {
+        GetComponentInChildren<Slider>().value = volumeLevel.volume;
     }
 }

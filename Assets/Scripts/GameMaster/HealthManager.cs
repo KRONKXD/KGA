@@ -28,7 +28,7 @@ public class HealthManager : MonoBehaviour
         if(currentHealth <= 0)
         {
             Time.timeScale = 0f;
-            GameObject.Find("Menus").transform.GetChild(2).gameObject.SetActive(true);
+            GameObject.Find("Menus").transform.GetChild(1).gameObject.SetActive(true);
         }
             
         //SceneManager.LoadScene("Lose");

@@ -6074,6 +6074,10 @@ PrefabInstance:
       propertyPath: paused_Menu
       value: 
       objectReference: {fileID: 1028068128}
+    - target: {fileID: 1421563878273427286, guid: e8e3da3eb805556499f18c69a028542e, type: 3}
+      propertyPath: unlocks.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8e3da3eb805556499f18c69a028542e, type: 3}
 --- !u!1001 &4689160897923657209
@@ -6133,12 +6137,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4689160898516123613, guid: 3a39fd16691da3f4e8a4863d3b671408, type: 3}
       propertyPath: breakTime
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4689160898516123613, guid: 3a39fd16691da3f4e8a4863d3b671408, type: 3}
       propertyPath: waves.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4689160898516123613, guid: 3a39fd16691da3f4e8a4863d3b671408, type: 3}
+      propertyPath: waves.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2585b8b0c2fc0aa41b4ac27d0b7a2661, type: 2}
+    - target: {fileID: 4689160898516123613, guid: 3a39fd16691da3f4e8a4863d3b671408, type: 3}
+      propertyPath: waves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8eab4b3d39b7ecc448132253a32690bc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a39fd16691da3f4e8a4863d3b671408, type: 3}
 --- !u!1001 &5804731363899511675
@@ -6202,7 +6214,7 @@ PrefabInstance:
       objectReference: {fileID: 1694577134}
     - target: {fileID: 5804731364971821111, guid: 6c530dfa021464b48950504f151e655e, type: 3}
       propertyPath: StartingMoney
-      value: 500
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c530dfa021464b48950504f151e655e, type: 3}

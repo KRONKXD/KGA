@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 3037799782806298417}
   - component: {fileID: -9013307236874500032}
   m_Layer: 0
-  m_Name: WitchBoss
+  m_Name: witch_enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

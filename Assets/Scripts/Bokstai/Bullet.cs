@@ -62,9 +62,9 @@ public class Bullet : MonoBehaviour
                     this.GetComponent<Collider2D>().enabled = false;
                     hitCollider.gameObject.GetComponent<Enemy>().TakeDamage(damage);
                     //cia  jei darysim kad dmg darytu pagal atstuma nuo sprogimo centro
-                    var closestPoint = hitCollider.ClosestPoint(transform.position);
-                    var distance = Vector3.Distance(closestPoint, transform.position);
-                    var damagePercent = Mathf.InverseLerp(explosiveRange, 0, distance);
+                    //var closestPoint = hitCollider.ClosestPoint(transform.position);
+                    //var distance = Vector3.Distance(closestPoint, transform.position);
+                    //var damagePercent = Mathf.InverseLerp(explosiveRange, 0, distance);
                     //-----
                     GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
                     Destroy(effectIns, 2f);

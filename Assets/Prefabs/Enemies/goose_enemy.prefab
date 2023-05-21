@@ -128,14 +128,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadSound: {fileID: 8300000, guid: 73b0b08cf643aa74192d4795ea42bd91, type: 3}
   difficulty: {fileID: 11400000, guid: b02ba26599226c748b33bc03e2929f20, type: 2}
-  easyMod: 0.8
-  mediumMod: 1
-  hardMod: 1.2
-  bounty: 60
-  speed: 2.5
-  maxHealth: 30
-  health: 30
-  damage: 10
+  bounty: 30
+  speed: 2
+  maxHealth: 15
+  health: 15
+  damage: 15
   healthBar: {fileID: 5500219952230540197}
   waypoint: {fileID: 0}
   splitInto: 0

@@ -68,9 +68,9 @@ public class UI_script : MonoBehaviour
             }
             else
             {
-                if (MoneyManager.CurrentMoney >= price1Tower * 2)
+                if (MoneyManager.CurrentMoney >= price1Tower * 3 / 2)
                 {
-                    UpdateMoney(price1Tower * 2);
+                    UpdateMoney(price1Tower * 3 / 2);
                     Unlock(buttonBuy1, root.Q<Label>("price1"), 0);
                 }
                 else
@@ -102,9 +102,9 @@ public class UI_script : MonoBehaviour
             }
             else
             {
-                if (MoneyManager.CurrentMoney >= price2Tower * 2)
+                if (MoneyManager.CurrentMoney >= price2Tower * 3 / 2)
                 {
-                    UpdateMoney(price2Tower * 2);
+                    UpdateMoney(price2Tower * 3 / 2);
                     Unlock(buttonBuy2, root.Q<Label>("price2"), 1);
                 }
                 else
@@ -136,9 +136,9 @@ public class UI_script : MonoBehaviour
             }
             else
             {
-                if (MoneyManager.CurrentMoney >= price3Tower * 2)
+                if (MoneyManager.CurrentMoney >= price3Tower * 3 / 2)
                 {
-                    UpdateMoney(price3Tower * 2);
+                    UpdateMoney(price3Tower * 3 / 2);
                     Unlock(buttonBuy3, root.Q<Label>("price3"), 2);
                 }
                 else
@@ -170,9 +170,9 @@ public class UI_script : MonoBehaviour
             }
             else
             {
-                if (MoneyManager.CurrentMoney >= price4Tower * 2)
+                if (MoneyManager.CurrentMoney >= price4Tower * 3 / 2)
                 {
-                    UpdateMoney(price4Tower * 2);
+                    UpdateMoney(price4Tower * 3 / 2);
                     Unlock(buttonBuy4, root.Q<Label>("price4"), 3);
                 }
                 else
@@ -204,10 +204,11 @@ public class UI_script : MonoBehaviour
             }
             else
             {
-                if (MoneyManager.CurrentMoney >= price5Tower * 2)
+                if (MoneyManager.CurrentMoney >= price5Tower * 3 / 2)
                 {
-                    UpdateMoney(price5Tower * 2);
+                    
                     Unlock(buttonBuy5, root.Q<Label>("price5"), 4);
+                    UpdateMoney(price5Tower * 3 / 2);
                 }
                 else
                 {
@@ -245,7 +246,7 @@ public class UI_script : MonoBehaviour
         {
             root.Q<Button>("buy1").text = "Unlock";
            // root.Q<Button>("buy1").style.backgroundColor = Color.red;
-            root.Q<Label>("price1").text = price1Tower * 2 + " G";
+            root.Q<Label>("price1").text = price1Tower * 3 / 2 + " G";
         }
         else
         {
@@ -256,7 +257,7 @@ public class UI_script : MonoBehaviour
         {
             root.Q<Button>("buy2").text = "Unlock";
             //root.Q<Button>("buy2").style.backgroundColor = Color.red;
-            root.Q<Label>("price2").text = price2Tower * 2 + " G";
+            root.Q<Label>("price2").text = price2Tower * 3 / 2 + " G";
         }
         else
         {
@@ -267,7 +268,7 @@ public class UI_script : MonoBehaviour
         {
             root.Q<Button>("buy3").text = "Unlock";
             //root.Q<Button>("buy3").style.backgroundColor = Color.red;
-            root.Q<Label>("price3").text = price3Tower * 2 + " G";
+            root.Q<Label>("price3").text = price3Tower * 3 / 2 + " G";
         }
         else
         {
@@ -278,7 +279,7 @@ public class UI_script : MonoBehaviour
         {
             root.Q<Button>("buy4").text = "Unlock";
             //root.Q<Button>("buy4").style.backgroundColor = Color.red;
-            root.Q<Label>("price4").text = price4Tower * 2 + " G";
+            root.Q<Label>("price4").text = price4Tower * 3 / 2 + " G";
         }
         else
         {
@@ -289,7 +290,7 @@ public class UI_script : MonoBehaviour
         {
             root.Q<Button>("buy5").text = "Unlock";
             //root.Q<Button>("buy5").style.backgroundColor = Color.red;
-            root.Q<Label>("price5").text = price5Tower * 2 + " G";
+            root.Q<Label>("price5").text = price5Tower * 3 / 2 + " G";
         }
         else
         {

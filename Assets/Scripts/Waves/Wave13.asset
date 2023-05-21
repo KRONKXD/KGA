@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c48c211bb53df84d9ae811065efb326, type: 3}
-  m_Name: Wave12
+  m_Name: Wave13
   m_EditorClassIdentifier: 
   enemyPrefabArray:
   - {fileID: 5500219951871402603, guid: 33d7ddf2c1ebc404b83592c7edbc367e, type: 3}
@@ -23,4 +23,5 @@ MonoBehaviour:
   - {fileID: 5500219951871402603, guid: 33d7ddf2c1ebc404b83592c7edbc367e, type: 3}
   - {fileID: 5500219951871402603, guid: 33d7ddf2c1ebc404b83592c7edbc367e, type: 3}
   - {fileID: 5500219951871402603, guid: 33d7ddf2c1ebc404b83592c7edbc367e, type: 3}
-  spawnInterval: 0.5
+  - {fileID: 5500219951871402603, guid: 02bd9a9e0c11184498fd07803d0a9ce1, type: 3}
+  spawnInterval: 0.25

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class DeadEnemyManager : MonoBehaviour
@@ -25,14 +24,14 @@ public class DeadEnemyManager : MonoBehaviour
     {
         //Debug.Log("added an enemy"+deadEnemy);
         deadEnemies.Enqueue(deadEnemy);
-        if(deadEnemies.Count > 5)
+        if (deadEnemies.Count > 5)
         {
             //Debug.Log("more than 5 added");
             Destroy(deadEnemies.Dequeue());
         }
     }
 
-    public static GameObject getDeadEnemy() 
+    public static GameObject getDeadEnemy()
     {
         //Debug.Log("reikalauja prieso lavono. Count: " + deadEnemies.Count());
         if (deadEnemies.Count > 0)

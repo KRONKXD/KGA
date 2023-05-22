@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a94ba74fe1d5114986753bf158951a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakTime: 10
+  breakTime: 3
   waves:
   - {fileID: 11400000, guid: e3239df9fd1aabe4f8056c399ef00dc3, type: 2}
   - {fileID: 11400000, guid: b8a67b209145c0d42bf897a9c9332037, type: 2}

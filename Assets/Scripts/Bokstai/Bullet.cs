@@ -4,8 +4,6 @@
 using System;
 using System.Security.Cryptography;
 using TMPro;
-using UnityEditor.Build;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.XR;
 using static UnityEngine.GraphicsBuffer;

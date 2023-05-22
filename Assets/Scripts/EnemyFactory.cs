@@ -8,12 +8,13 @@ using UnityEngine.SceneManagement;
 public class EnemyFactory : MonoBehaviour
 {
     public float breakTime = 0f;
-    private float timer = 2f;
+    private float timer = 3f;
     public Wave[] waves;
     //public Transform[][] enemyPrefabArray;
     private int waveIndex = 0;
     public int kurisWaypoints = 0;
     private string waypointsName;
+    private UI_script UI;
 
     private bool waveEnded = true;
     // Start is called before the first frame update
@@ -21,7 +22,8 @@ public class EnemyFactory : MonoBehaviour
     {
         Time.timeScale = 1f;
         waypointsName = "Waypoints" + kurisWaypoints;
-        //waves = WaveDatabase.instance.waves;
+        UI = GameObject.Find("UIDocument").GetComponent<UI_script>();
+        UI.UpdateWave(waveIndex + 1, waves.Length, (int)timer);
     }
 
     // Update is called once per frame
@@ -38,8 +40,11 @@ public class EnemyFactory : MonoBehaviour
                 }
                 if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
                 {
-                    timer = breakTime + waves[waveIndex].enemyPrefabArray.Length * waves[waveIndex].spawnInterval;
+                    //timer = breakTime + waves[waveIndex].enemyPrefabArray.Length * waves[waveIndex].spawnInterval;
+                    timer = breakTime;
                     waveEnded = true;
+                    
+                    UI.UpdateWave(waveIndex + 1, waves.Length, (int)breakTime);
                 }
             }
             else
@@ -65,6 +70,7 @@ public class EnemyFactory : MonoBehaviour
             yield return new WaitForSeconds(enemyWave.spawnInterval);
         }
         waveIndex++;
+
     }
 
     void SpawnEnemy(Transform enemyPrefab)
